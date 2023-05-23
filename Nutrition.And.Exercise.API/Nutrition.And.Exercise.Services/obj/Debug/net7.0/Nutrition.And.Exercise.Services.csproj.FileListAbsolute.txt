@@ -1,0 +1,12 @@
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\bin\Debug\net7.0\Nutrition.And.Exercise.Services.deps.json
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\bin\Debug\net7.0\Nutrition.And.Exercise.Services.dll
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\bin\Debug\net7.0\Nutrition.And.Exercise.Services.pdb
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\obj\Debug\net7.0\Nutrition.And.Exercise.Services.csproj.AssemblyReference.cache
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\obj\Debug\net7.0\Nutrition.And.Exercise.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\obj\Debug\net7.0\Nutrition.And.Exercise.Services.AssemblyInfoInputs.cache
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\obj\Debug\net7.0\Nutrition.And.Exercise.Services.AssemblyInfo.cs
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\obj\Debug\net7.0\Nutrition.And.Exercise.Services.csproj.CoreCompileInputs.cache
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\obj\Debug\net7.0\Nutrition.And.Exercise.Services.dll
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\obj\Debug\net7.0\refint\Nutrition.And.Exercise.Services.dll
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\obj\Debug\net7.0\Nutrition.And.Exercise.Services.pdb
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Services\obj\Debug\net7.0\ref\Nutrition.And.Exercise.Services.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\NutritionAndExercise.Api.props" />
+</Project>
