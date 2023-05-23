@@ -1,0 +1,12 @@
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\bin\Debug\net7.0\Nutrition.And.Exercise.Borders.deps.json
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\bin\Debug\net7.0\Nutrition.And.Exercise.Borders.dll
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\bin\Debug\net7.0\Nutrition.And.Exercise.Borders.pdb
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\obj\Debug\net7.0\Nutrition.And.Exercise.Borders.csproj.AssemblyReference.cache
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\obj\Debug\net7.0\Nutrition.And.Exercise.Borders.GeneratedMSBuildEditorConfig.editorconfig
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\obj\Debug\net7.0\Nutrition.And.Exercise.Borders.AssemblyInfoInputs.cache
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\obj\Debug\net7.0\Nutrition.And.Exercise.Borders.AssemblyInfo.cs
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\obj\Debug\net7.0\Nutrition.And.Exercise.Borders.csproj.CoreCompileInputs.cache
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\obj\Debug\net7.0\Nutrition.And.Exercise.Borders.dll
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\obj\Debug\net7.0\refint\Nutrition.And.Exercise.Borders.dll
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\obj\Debug\net7.0\Nutrition.And.Exercise.Borders.pdb
+C:\Nutrition.And.Exercise\Nutrition.And.Exercise.API\Nutrition.And.Exercise.Borders\obj\Debug\net7.0\ref\Nutrition.And.Exercise.Borders.dll
