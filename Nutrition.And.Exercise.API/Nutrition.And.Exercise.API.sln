@@ -25,7 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nutrition.And.Exercise.Test
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Nutrition.And.Exercise.Api", "01.Nutrition.And.Exercise.Api", "{125877E4-7DDB-4439-87F5-E5C4829C65D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nutrition.And.Exercise.Api", "Nutrition.And.Exercise.Api\Nutrition.And.Exercise.Api.csproj", "{13FD2664-16FA-4912-BB1E-D9692782F8D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nutrition.And.Exercise.Api", "Nutrition.And.Exercise.Api\Nutrition.And.Exercise.Api.csproj", "{13FD2664-16FA-4912-BB1E-D9692782F8D7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{666C996B-9DD2-4CBC-BFC6-26B01743E3F1} = {666C996B-9DD2-4CBC-BFC6-26B01743E3F1}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
