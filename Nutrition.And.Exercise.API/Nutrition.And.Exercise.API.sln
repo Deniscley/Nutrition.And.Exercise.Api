@@ -3,17 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NutritionAndExercise.Api", "NutritionAndExercise.WebApi\NutritionAndExercise.Api.csproj", "{41DB88FA-43A0-4FA0-8819-947F2BD8C616}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Nutrition.And.Exercise.UseCases", "04.Nutrition.And.Exercise.UseCases", "{7980B630-DF86-47A9-AE0E-2740E02599F7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Nutrition.And.Exercise.Api", "01.Nutrition.And.Exercise.Api", "{01BA9B6D-499D-45FC-BB3C-7B09882C8C0B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Nutrition.And.Exercise.UseCases", "05.Nutrition.And.Exercise.UseCases", "{7980B630-DF86-47A9-AE0E-2740E02599F7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.Nutrition.And.Exercise.Repositories", "06.Nutrition.And.Exercise.Repositories", "{10F24EF8-96B5-4AF2-BF93-16155546F179}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Nutrition.And.Exercise.Repositories", "05.Nutrition.And.Exercise.Repositories", "{10F24EF8-96B5-4AF2-BF93-16155546F179}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nutrition.And.Exercise.UseCases", "Nutrition.And.Exercise.UseCases\Nutrition.And.Exercise.UseCases.csproj", "{666C996B-9DD2-4CBC-BFC6-26B01743E3F1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Nutrition.And.Exercise.Services", "04.Nutrition.And.Exercise.Services", "{EC2E9975-6A1F-40AA-86A1-0D1FF397B615}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Nutrition.And.Exercise.Services", "03.Nutrition.And.Exercise.Services", "{EC2E9975-6A1F-40AA-86A1-0D1FF397B615}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Nutrition.And.Exercise.Borders", "02.Nutrition.And.Exercise.Borders", "{667DF2A2-92B5-4F57-B961-17953B60C8D2}"
 EndProject
@@ -23,9 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nutrition.And.Exercise.Serv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nutrition.And.Exercise.Repositories", "Nutrition.And.Exercise.Repositories\Nutrition.And.Exercise.Repositories.csproj", "{DB2AB549-3FDB-4076-AF84-44E247D113FA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07.Nutrition.And.Exercise.Tests", "07.Nutrition.And.Exercise.Tests", "{22F71690-DAE5-4CB4-BC07-8FD7880B328E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.Nutrition.And.Exercise.Tests", "06.Nutrition.And.Exercise.Tests", "{22F71690-DAE5-4CB4-BC07-8FD7880B328E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nutrition.And.Exercise.Tests", "Nutrition.And.Exercise.Tests\Nutrition.And.Exercise.Tests.csproj", "{E4D2775D-9EEB-4BAB-98B7-508214837DB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nutrition.And.Exercise.Tests", "Nutrition.And.Exercise.Tests\Nutrition.And.Exercise.Tests.csproj", "{E4D2775D-9EEB-4BAB-98B7-508214837DB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Nutrition.And.Exercise.Api", "01.Nutrition.And.Exercise.Api", "{125877E4-7DDB-4439-87F5-E5C4829C65D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nutrition.And.Exercise.Api", "Nutrition.And.Exercise.Api\Nutrition.And.Exercise.Api.csproj", "{13FD2664-16FA-4912-BB1E-D9692782F8D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{41DB88FA-43A0-4FA0-8819-947F2BD8C616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41DB88FA-43A0-4FA0-8819-947F2BD8C616}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41DB88FA-43A0-4FA0-8819-947F2BD8C616}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41DB88FA-43A0-4FA0-8819-947F2BD8C616}.Release|Any CPU.Build.0 = Release|Any CPU
 		{666C996B-9DD2-4CBC-BFC6-26B01743E3F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{666C996B-9DD2-4CBC-BFC6-26B01743E3F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{666C996B-9DD2-4CBC-BFC6-26B01743E3F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,17 +53,21 @@ Global
 		{E4D2775D-9EEB-4BAB-98B7-508214837DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4D2775D-9EEB-4BAB-98B7-508214837DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4D2775D-9EEB-4BAB-98B7-508214837DB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13FD2664-16FA-4912-BB1E-D9692782F8D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13FD2664-16FA-4912-BB1E-D9692782F8D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13FD2664-16FA-4912-BB1E-D9692782F8D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13FD2664-16FA-4912-BB1E-D9692782F8D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{41DB88FA-43A0-4FA0-8819-947F2BD8C616} = {01BA9B6D-499D-45FC-BB3C-7B09882C8C0B}
 		{666C996B-9DD2-4CBC-BFC6-26B01743E3F1} = {7980B630-DF86-47A9-AE0E-2740E02599F7}
 		{437FCBB1-5964-4135-83F5-BB5DF5CAC097} = {667DF2A2-92B5-4F57-B961-17953B60C8D2}
 		{C5CEA887-7C00-4059-8351-61B373CF1BD3} = {EC2E9975-6A1F-40AA-86A1-0D1FF397B615}
 		{DB2AB549-3FDB-4076-AF84-44E247D113FA} = {10F24EF8-96B5-4AF2-BF93-16155546F179}
 		{E4D2775D-9EEB-4BAB-98B7-508214837DB8} = {22F71690-DAE5-4CB4-BC07-8FD7880B328E}
+		{13FD2664-16FA-4912-BB1E-D9692782F8D7} = {125877E4-7DDB-4439-87F5-E5C4829C65D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D4A6006-C624-486E-A23E-B63BB3AAF8F9}
