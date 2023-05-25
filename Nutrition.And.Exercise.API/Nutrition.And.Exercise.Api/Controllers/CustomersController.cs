@@ -1,18 +1,36 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Nutrition.And.Exercise.Borders.Entities;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Nutrition.And.Exercise.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/customers")]
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        // GET: api/<CustomersController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        /// <summary>
+        /// Client list.
+        /// </summary>
+        /// <returns>Get client list.</returns>
+        [HttpGet("clients")]
+        [ProducesResponseType(200, Type = typeof(Client))]
+        [ProducesResponseType(404)]
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(new List<Client>()
+            {
+                new Client {
+                    Id = 1,
+                    Nome = "Kakarotto",
+                    DataNascimento = new DateTime(1980, 01, 01)
+                },
+                new Client {
+                    Id = 2,
+                    Nome = "Bulma",
+                    DataNascimento = new DateTime(1978, 05, 05)
+                }
+            });
         }
 
         // GET api/<CustomersController>/5
