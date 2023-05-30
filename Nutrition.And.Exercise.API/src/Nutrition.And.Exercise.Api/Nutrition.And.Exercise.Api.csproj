@@ -26,7 +26,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Nutrition.And.Exercise.Borders\Nutrition.And.Exercise.Borders.csproj" />
-    <ProjectReference Include="..\Nutrition.And.Exercise.Repositories\Nutrition.And.Exercise.Repositories.csproj" />
+    <ProjectReference Include="..\Nutrition.And.Exercise.Data\Nutrition.And.Exercise.Data.csproj" />
+    <ProjectReference Include="..\Nutrition.And.Exercise.UseCases\Nutrition.And.Exercise.UseCases.csproj" />
   </ItemGroup>
+
+	<ItemGroup>
+		<Using Include="Nutrition.And.Exercise.Borders.Entities"/>
+	</ItemGroup>
 
 </Project>

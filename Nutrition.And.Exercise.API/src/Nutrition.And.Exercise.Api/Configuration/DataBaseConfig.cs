@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Nutrition.And.Exercise.Repositories.Context;
+using Nutrition.And.Exercise.Data.Context;
 
 namespace Nutrition.And.Exercise.Api.Configuration
 {

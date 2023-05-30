@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrition.And.Exercise.Repositories.Context
+namespace Nutrition.And.Exercise.Data.Context
 {
     public class DataContext : DbContext
     {
