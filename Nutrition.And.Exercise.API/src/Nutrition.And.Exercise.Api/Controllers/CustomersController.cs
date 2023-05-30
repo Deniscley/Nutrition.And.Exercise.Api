@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Nutrition.And.Exercise.Borders.Dtos.Response;
 using Nutrition.And.Exercise.Borders.Entities;
+using Nutrition.And.Exercise.Borders.Interfaces.UseCases;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,35 +11,36 @@ namespace Nutrition.And.Exercise.Api.Controllers
     [ApiController]
     public class CustomersController : ControllerBase
     {
+        private readonly IClientUseCase clientUseCase;
+        public CustomersController(IClientUseCase clientUseCase)
+        {
+            this.clientUseCase = clientUseCase;
+        }
+
         /// <summary>
         /// Client list.
         /// </summary>
         /// <returns>Get client list.</returns>
-        [HttpGet("clients")]
-        [ProducesResponseType(200, Type = typeof(Client))]
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(ClientsResponse))]
         [ProducesResponseType(404)]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(new List<Client>()
-            {
-                new Client {
-                    Id = 1,
-                    Nome = "Kakarotto",
-                    DataNascimento = new DateTime(1980, 01, 01)
-                },
-                new Client {
-                    Id = 2,
-                    Nome = "Bulma",
-                    DataNascimento = new DateTime(1978, 05, 05)
-                }
-            });
+            var response = await clientUseCase.GetCustomersAsync();
+            return Ok(response);
         }
 
-        // GET api/<CustomersController>/5
+        /// <summary>
+        /// Client by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Get client by id</returns>
         [HttpGet("{id}")]
-        public string Get(int id)
+        [ProducesResponseType(200, Type = typeof(ClientsResponse))]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            return Ok(await clientUseCase.GetClientAsync(id));
         }
 
         // POST api/<CustomersController>

@@ -7,9 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dtos\RequestDtos\" />
-    <Folder Include="Enums\" />
-    <Folder Include="Validators\" />
+    <Compile Remove="Dtos\RequestDtos\**" />
+    <Compile Remove="Enums\**" />
+    <Compile Remove="Validators\**" />
+    <EmbeddedResource Remove="Dtos\RequestDtos\**" />
+    <EmbeddedResource Remove="Enums\**" />
+    <EmbeddedResource Remove="Validators\**" />
+    <None Remove="Dtos\RequestDtos\**" />
+    <None Remove="Enums\**" />
+    <None Remove="Validators\**" />
   </ItemGroup>
 
 </Project>
