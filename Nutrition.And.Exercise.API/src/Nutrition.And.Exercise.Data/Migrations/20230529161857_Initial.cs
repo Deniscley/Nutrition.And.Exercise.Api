@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Nutrition.And.Exercise.Repositories.Migrations
+namespace Nutrition.And.Exercise.Data.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration

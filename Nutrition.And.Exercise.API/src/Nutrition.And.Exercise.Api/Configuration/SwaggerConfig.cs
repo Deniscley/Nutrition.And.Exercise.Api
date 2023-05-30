@@ -10,16 +10,18 @@
             });
         }
 
-        //// Configure the HTTP request pipeline.
-        public static void UseSwaggerConfiguration(this IApplicationBuilder app)
+        public static void UseSwaggerConfiguration(this WebApplication app)
         {
-            app.UseSwagger();
-
-            app.UseSwaggerUI(c =>
+            if (app.Environment.IsDevelopment())
             {
-                c.RoutePrefix = string.Empty;
-                c.SwaggerEndpoint("./swagger/v1/swagger.json", "Nutrition & Exercise v1");
-            });
+                app.UseSwagger();
+
+                app.UseSwaggerUI(c =>
+                {
+                    c.RoutePrefix = string.Empty;
+                    c.SwaggerEndpoint("./swagger/v1/swagger.json", "Nutrition & Exercise v1");
+                });
+            }
         }
     }
 }
