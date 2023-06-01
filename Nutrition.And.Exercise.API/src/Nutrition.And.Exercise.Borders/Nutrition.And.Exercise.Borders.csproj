@@ -25,9 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Interfaces\Repositories\QueryRepositories\" />
-    <Folder Include="Interfaces\Repositories\PersistenceRepositories\Create\" />
-    <Folder Include="Interfaces\Repositories\PersistenceRepositories\Delete\" />
-    <Folder Include="Interfaces\Repositories\PersistenceRepositories\Update\" />
   </ItemGroup>
 
 </Project>
