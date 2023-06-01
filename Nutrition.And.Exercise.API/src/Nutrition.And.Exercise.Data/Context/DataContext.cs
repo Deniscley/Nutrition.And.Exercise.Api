@@ -10,7 +10,7 @@ namespace Nutrition.And.Exercise.Data.Context
 {
     public class DataContext : DbContext
     {
-        public DbSet<Client> Clients { get; set; }
+        public DbSet<Client> Customers { get; set; }
 
         public DataContext(DbContextOptions options) : base(options)
         {

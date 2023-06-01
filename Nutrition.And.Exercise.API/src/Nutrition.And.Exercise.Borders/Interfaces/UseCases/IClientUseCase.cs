@@ -10,7 +10,7 @@ namespace Nutrition.And.Exercise.Borders.Interfaces.UseCases
 {
     public interface IClientUseCase
     {
-        Task<Client> GetClientAsync(int id);
+        Task<Client> GetClientAsync(Guid id);
         Task<IEnumerable<Client>> GetCustomersAsync();
     }
 }

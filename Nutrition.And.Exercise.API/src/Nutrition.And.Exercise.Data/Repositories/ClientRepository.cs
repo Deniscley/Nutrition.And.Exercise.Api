@@ -22,12 +22,12 @@ namespace Nutrition.And.Exercise.Data.Repository
 
         public async Task<IEnumerable<Client>> GetCustomersAsync()
         {
-            return await context.Clients.AsNoTracking().ToListAsync();
+            return await context.Customers.AsNoTracking().ToListAsync();
         }
 
-        public async Task<Client> GetClientAsync(int id)
+        public async Task<Client> GetClientAsync(Guid id)
         {
-            return await context.Clients.FindAsync(id);
+            return await context.Customers.FindAsync(id);
         }
     }
 }

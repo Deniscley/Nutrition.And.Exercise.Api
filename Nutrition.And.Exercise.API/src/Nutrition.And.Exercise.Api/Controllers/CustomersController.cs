@@ -38,7 +38,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(200, Type = typeof(ClientsResponse))]
         [ProducesResponseType(404)]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> Get(Guid id)
         {
             return Ok(await clientUseCase.GetClientAsync(id));
         }
