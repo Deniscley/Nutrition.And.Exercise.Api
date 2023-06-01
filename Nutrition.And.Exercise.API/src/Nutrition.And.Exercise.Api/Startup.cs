@@ -1,4 +1,5 @@
-﻿using Nutrition.And.Exercise.Api.Configuration;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Nutrition.And.Exercise.Api.Configuration;
 
 namespace Nutrition.And.Exercise.Api
 {
@@ -20,6 +21,7 @@ namespace Nutrition.And.Exercise.Api
             //// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
             services.AddSwaggerConfiguration();
+            services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<Startup>());
             services.AddDatabaseConfiguration(Configuration);
             services.AddDependencyInjectionConfiguration();
         }

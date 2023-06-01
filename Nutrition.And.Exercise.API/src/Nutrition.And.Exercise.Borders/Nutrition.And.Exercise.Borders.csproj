@@ -20,6 +20,14 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\Repositories\QueryRepositories\" />
+    <Folder Include="Interfaces\Repositories\PersistenceRepositories\Create\" />
+    <Folder Include="Interfaces\Repositories\PersistenceRepositories\Delete\" />
+    <Folder Include="Interfaces\Repositories\PersistenceRepositories\Update\" />
   </ItemGroup>
 
 </Project>

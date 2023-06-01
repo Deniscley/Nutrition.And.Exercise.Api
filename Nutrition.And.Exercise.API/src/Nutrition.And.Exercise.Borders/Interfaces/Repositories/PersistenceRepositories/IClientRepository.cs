@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrition.And.Exercise.Borders.Interfaces.Repository
+namespace Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories
 {
     public interface IClientRepository
     {

@@ -26,6 +26,8 @@
 
 	<ItemGroup>
 	  <Folder Include="Migrations\" />
+	  <Folder Include="Repositories\PersistenceRepositories\Create\" />
+	  <Folder Include="Repositories\PersistenceRepositories\Delete\" />
 	</ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nutrition.And.Exercise.Borders.Entities;
-using Nutrition.And.Exercise.Borders.Interfaces.Repository;
+using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
 using Nutrition.And.Exercise.Borders.Interfaces.UseCases;
 
 namespace Nutrition.And.Exercise.UseCases
