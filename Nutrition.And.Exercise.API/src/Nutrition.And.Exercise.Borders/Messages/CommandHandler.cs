@@ -1,4 +1,5 @@
 ﻿using FluentValidation.Results;
+using Nutrition.And.Exercise.Borders.Interfaces.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,13 @@ namespace Nutrition.And.Exercise.Borders.Messages
         protected void AddError(string message)
         {
             ValidationResult.Errors.Add(new ValidationFailure(string.Empty, message));
+        }
+
+        protected async Task<ValidationResult> PersistData(IUnitOfWork uow)
+        {
+            if (!await uow.Commit()) AddError("Houve um erro ao persistir os dados");
+
+            return ValidationResult;
         }
     }
 }

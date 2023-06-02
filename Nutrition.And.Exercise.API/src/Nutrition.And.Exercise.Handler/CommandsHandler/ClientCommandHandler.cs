@@ -1,6 +1,7 @@
 ﻿using FluentValidation.Results;
 using MediatR;
 using Nutrition.And.Exercise.Borders.Entities;
+using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
 using Nutrition.And.Exercise.Borders.Messages;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,11 @@ namespace Nutrition.And.Exercise.Borders.Commands
     public class ClientCommandHandler : CommandHandler, 
         IRequestHandler<RegisterClientCommand, ValidationResult>
     {
+        private readonly IClientRepository _clientRepository;
+        public ClientCommandHandler(IClientRepository clientRepository) {
+            _clientRepository = clientRepository;
+        
+        }
         public async Task<ValidationResult> Handle(RegisterClientCommand message, CancellationToken cancellationToken)
         {
             if (!message.EhValid()) return message.ValidationResult;
@@ -20,16 +26,17 @@ namespace Nutrition.And.Exercise.Borders.Commands
             var client = new Client(message.Id, message.Nome, message.DataNascimento);
 
             // Validações de negócio
+            var existingCustomer = await _clientRepository.GetClientAsync(message.Id);
 
-            // Persistir no banco!
-
-            if (true) // Já existe um cliente com o id informado
+            if (existingCustomer != null)
             {
-                AddError("Este Id já está em uso.");
+                AddError("Este Cliente já existe.");
                 return ValidationResult;
             }
 
-            return message.ValidationResult;
+            _clientRepository.InsertCustomer(client);
+
+            return await PersistData(_clientRepository.UnitOfWork);
         }
     }
 }

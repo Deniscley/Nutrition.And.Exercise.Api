@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Nutrition.And.Exercise.Borders.DomainObjects;
+using Nutrition.And.Exercise.Borders.Interfaces.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Nutrition.And.Exercise.Borders.Entities
 {
-    public class Client
+    public class Client : Entity, IAggregateRoot
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }
