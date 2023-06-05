@@ -4,8 +4,10 @@ using Nutrition.And.Exercise.Borders.DomainObjects;
 using Nutrition.And.Exercise.Borders.Entities;
 using Nutrition.And.Exercise.Borders.Interfaces.Data;
 using Nutrition.And.Exercise.Borders.Mediator;
+using Nutrition.And.Exercise.Borders.Messages;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +24,6 @@ namespace Nutrition.And.Exercise.Data.Context
 
         public DataContext()
         {
-            //ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DB_NutritionAndExercise;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
             ConnectionString = Configuration.GetConnectionString("DefaultConnection");
         }
 
@@ -35,6 +36,9 @@ namespace Nutrition.And.Exercise.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Ignore<ValidationResult>();
+            modelBuilder.Ignore<Event>();
+
             foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(
                 e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
                 property.SetColumnType("varchar(100)");

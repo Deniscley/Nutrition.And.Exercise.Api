@@ -40,7 +40,7 @@ namespace Nutrition.And.Exercise.Data.Repositories.PersistenceRepositories
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
     }
 }
