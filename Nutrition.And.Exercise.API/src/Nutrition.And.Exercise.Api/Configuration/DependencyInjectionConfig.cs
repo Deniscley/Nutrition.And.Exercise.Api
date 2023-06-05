@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Nutrition.And.Exercise.Borders.Commands;
+using Nutrition.And.Exercise.Borders.Events;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.QueryRepositories;
 using Nutrition.And.Exercise.Borders.Interfaces.UseCases;
@@ -27,6 +28,9 @@ namespace Nutrition.And.Exercise.Api.Configuration
 
             ///CommandHandler
             services.AddScoped<IRequestHandler<RegisterClientCommand, ValidationResult>, ClientCommandHandler>();
+
+            ///Event
+            services.AddScoped<INotificationHandler<RegisteredCustomerEvent>, ClientEventHandler>();
         }
     }
 }

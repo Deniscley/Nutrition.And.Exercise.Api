@@ -18,7 +18,7 @@ namespace Nutrition.And.Exercise.Borders.Mediator
             _mediator = mediator;
         }
 
-        public Task PublishEvent<T>(T evento) where T : Event
+        public Task PublishEvent<T>(T eventt) where T : Event
         {
             throw new NotImplementedException();
         }
