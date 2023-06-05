@@ -20,18 +20,20 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	<PackageReference Include="FluentValidation" Version="11.5.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Nutrition.And.Exercise.Borders\Nutrition.And.Exercise.Borders.csproj" />
     <ProjectReference Include="..\Nutrition.And.Exercise.Data\Nutrition.And.Exercise.Data.csproj" />
-    <ProjectReference Include="..\Nutrition.And.Exercise.UseCases\Nutrition.And.Exercise.UseCases.csproj" />
+    <ProjectReference Include="..\Nutrition.And.Exercise.Handler\Nutrition.And.Exercise.Handler.csproj" />
   </ItemGroup>
 
 	<ItemGroup>
-		<Using Include="Nutrition.And.Exercise.Borders.Entities"/>
+		<Using Include="Nutrition.And.Exercise.Borders.Entities" />
 	</ItemGroup>
 
 </Project>

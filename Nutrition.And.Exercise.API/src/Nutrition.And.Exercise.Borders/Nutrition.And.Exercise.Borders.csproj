@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -16,6 +16,21 @@
     <None Remove="Dtos\RequestDtos\**" />
     <None Remove="Enums\**" />
     <None Remove="Validators\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dtos\RequestDto\" />
+    <Folder Include="Interfaces\Repositories\QueryRepositories\" />
   </ItemGroup>
 
 </Project>
