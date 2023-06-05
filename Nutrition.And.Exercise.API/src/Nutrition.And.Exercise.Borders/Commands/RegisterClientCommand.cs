@@ -1,4 +1,5 @@
-﻿using Nutrition.And.Exercise.Borders.Messages;
+﻿using FluentValidation;
+using Nutrition.And.Exercise.Borders.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,26 @@ namespace Nutrition.And.Exercise.Borders.Commands
             Id = id;
             Nome = nome;
             DataNascimento = dataNascimento;
-        }   
+        }
+
+        public override bool EhValid()
+        {
+            ValidationResult = new RegisterClientValidation().Validate(this);
+            return ValidationResult.IsValid;
+        }
+
+        public class RegisterClientValidation : AbstractValidator<RegisterClientCommand>
+        {
+            public RegisterClientValidation()
+            {
+                RuleFor(c => c.Id)
+                    .NotEqual(Guid.Empty)
+                    .WithMessage("Id do cliente inválido");
+
+                RuleFor(c => c.Nome)
+                    .NotEmpty()
+                    .WithMessage("O nome do cliente não foi informado");
+            }
+        }
     }
 }
