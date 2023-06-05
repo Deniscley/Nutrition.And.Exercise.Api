@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Nutrition.And.Exercise.Borders.Commands;
 using Nutrition.And.Exercise.Borders.Dtos.Response;
 using Nutrition.And.Exercise.Borders.Entities;
+using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
 using Nutrition.And.Exercise.Borders.Interfaces.UseCases;
+using Nutrition.And.Exercise.Borders.Mediator;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,12 +12,18 @@ namespace Nutrition.And.Exercise.Api.Controllers
 {
     [Route("api/customers")]
     [ApiController]
-    public class CustomersController : ControllerBase
+    public class CustomersController : MainController
     {
-        private readonly IClientUseCase clientUseCase;
-        public CustomersController(IClientUseCase clientUseCase)
+        private readonly IClientUseCase _clientUseCase;
+        private readonly IClientRepository _clientRepository;
+        private readonly IMediatorHandler _mediatorHandler;
+
+        public CustomersController(IClientUseCase clientUseCase,
+            IClientRepository clientRepository, IMediatorHandler mediatorHandler)
         {
-            this.clientUseCase = clientUseCase;
+            _clientUseCase = clientUseCase;
+            _clientRepository = clientRepository;
+            _mediatorHandler = mediatorHandler;
         }
 
         /// <summary>
@@ -26,7 +35,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         [ProducesResponseType(404)]
         public async Task<IActionResult> Get()
         {
-            var response = await clientUseCase.GetCustomersAsync();
+            var response = await _clientUseCase.GetCustomersAsync();
             return Ok(response);
         }
 
@@ -40,7 +49,18 @@ namespace Nutrition.And.Exercise.Api.Controllers
         [ProducesResponseType(404)]
         public async Task<IActionResult> Get(Guid id)
         {
-            return Ok(await clientUseCase.GetClientAsync(id));
+            return Ok(await _clientUseCase.GetClientAsync(id));
+        }
+
+        [HttpGet("clients")]
+        [ProducesResponseType(200, Type = typeof(ClientsResponse))]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> Index()
+        {
+            var result = await _mediatorHandler
+                .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Cascão", DateTime.Now));
+
+            return CustomResponse(result);
         }
 
         // POST api/<CustomersController>
