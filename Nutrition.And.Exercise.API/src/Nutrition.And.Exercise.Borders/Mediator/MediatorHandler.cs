@@ -18,9 +18,9 @@ namespace Nutrition.And.Exercise.Borders.Mediator
             _mediator = mediator;
         }
 
-        public Task PublishEvent<T>(T eventt) where T : Event
+        public async Task PublishEvent<T>(T eventt) where T : Event
         {
-            throw new NotImplementedException();
+            await _mediator.Publish(eventt);
         }
 
         public async Task<ValidationResult> SendCommand<T>(T command) where T : Command
