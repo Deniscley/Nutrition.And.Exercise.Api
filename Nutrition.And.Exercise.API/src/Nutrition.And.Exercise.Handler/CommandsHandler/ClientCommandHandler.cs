@@ -1,6 +1,7 @@
 ﻿using FluentValidation.Results;
 using MediatR;
 using Nutrition.And.Exercise.Borders.Entities;
+using Nutrition.And.Exercise.Borders.Events;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
 using Nutrition.And.Exercise.Borders.Messages;
 using System;
@@ -35,6 +36,8 @@ namespace Nutrition.And.Exercise.Borders.Commands
             }
 
             _clientRepository.InsertCustomer(client);
+
+            client.AddEvent(new RegisteredCustomerEvent(message.Id, message.Nome, message.DataNascimento));
 
             return await PersistData(_clientRepository.UnitOfWork);
         }
