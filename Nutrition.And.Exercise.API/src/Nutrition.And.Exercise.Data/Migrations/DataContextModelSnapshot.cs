@@ -24,11 +24,9 @@ namespace Nutrition.And.Exercise.Data.Migrations
 
             modelBuilder.Entity("Nutrition.And.Exercise.Borders.Entities.Client", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime2");
@@ -39,7 +37,7 @@ namespace Nutrition.And.Exercise.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clients");
+                    b.ToTable("Customers");
                 });
 #pragma warning restore 612, 618
         }
