@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Nutrition.And.Exercise.Borders.Commands;
 using Nutrition.And.Exercise.Borders.Dtos.Response;
 using Nutrition.And.Exercise.Borders.Entities;
@@ -17,13 +18,18 @@ namespace Nutrition.And.Exercise.Api.Controllers
         private readonly IClientUseCase _clientUseCase;
         private readonly IClientRepository _clientRepository;
         private readonly IMediatorHandler _mediatorHandler;
+        //private readonly IMapper _mapper;
 
         public CustomersController(IClientUseCase clientUseCase,
-            IClientRepository clientRepository, IMediatorHandler mediatorHandler)
+            IClientRepository clientRepository,
+            IMediatorHandler mediatorHandler
+            //IMapper mapper
+            )
         {
             _clientUseCase = clientUseCase;
             _clientRepository = clientRepository;
             _mediatorHandler = mediatorHandler;
+            //_mapper = mapper;
         }
 
         /// <summary>
@@ -31,7 +37,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// </summary>
         /// <returns>Get client list.</returns>
         [HttpGet]
-        [ProducesResponseType(200, Type = typeof(ClientsResponse))]
+        [ProducesResponseType(200, Type = typeof(ClientResponse))]
         [ProducesResponseType(404)]
         public async Task<IActionResult> Get()
         {
@@ -45,7 +51,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// <param name="id"></param>
         /// <returns>Get client by id</returns>
         [HttpGet("{id}")]
-        [ProducesResponseType(200, Type = typeof(ClientsResponse))]
+        [ProducesResponseType(200, Type = typeof(ClientResponse))]
         [ProducesResponseType(404)]
         public async Task<IActionResult> Get(Guid id)
         {
@@ -53,7 +59,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         }
 
         [HttpGet("clients")]
-        [ProducesResponseType(200, Type = typeof(ClientsResponse))]
+        [ProducesResponseType(200, Type = typeof(ClientResponse))]
         [ProducesResponseType(404)]
         public async Task<IActionResult> Index()
         {
