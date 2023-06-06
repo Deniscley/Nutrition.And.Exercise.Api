@@ -26,6 +26,7 @@ namespace Nutrition.And.Exercise.UseCases
         public async Task<Client> GetClientAsync(Guid id)
         {
             var response = await clientRepository.GetClientAsync(id);
+            //var client = Mapper.Map<clientResponse>(response);
             return response;
         }
     }

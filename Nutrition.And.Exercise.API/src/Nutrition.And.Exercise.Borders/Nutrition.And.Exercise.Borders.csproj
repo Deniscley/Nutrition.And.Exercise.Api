@@ -8,15 +8,12 @@
 
   <ItemGroup>
     <Compile Remove="Dtos\RequestDtos\**" />
-    <Compile Remove="Dtos\RequestDto\**" />
     <Compile Remove="Enums\**" />
     <Compile Remove="Validators\**" />
     <EmbeddedResource Remove="Dtos\RequestDtos\**" />
-    <EmbeddedResource Remove="Dtos\RequestDto\**" />
     <EmbeddedResource Remove="Enums\**" />
     <EmbeddedResource Remove="Validators\**" />
     <None Remove="Dtos\RequestDtos\**" />
-    <None Remove="Dtos\RequestDto\**" />
     <None Remove="Enums\**" />
     <None Remove="Validators\**" />
   </ItemGroup>
