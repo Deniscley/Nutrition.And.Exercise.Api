@@ -27,13 +27,13 @@ namespace Nutrition.And.Exercise.Api.Configuration
             //// MediatorHandler
             services.AddScoped<IMediatorHandler, MediatorHandler>();
 
-            ///CommandHandler
+            //// CommandHandler
             services.AddScoped<IRequestHandler<RegisterClientCommand, ValidationResult>, ClientCommandHandler>();
 
-            ///Event
+            //// Event
             services.AddScoped<INotificationHandler<RegisteredCustomerEvent>, ClientEventHandler>();
 
-            ///Context
+            //// Context
             //services.AddScoped<DataContext>();
         }
     }
