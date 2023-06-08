@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Nutrition.And.Exercise.Borders.Dtos.RequestDto
 {
+    /// <summary>
+    /// Object used to insert new customers.
+    /// </summary>
     public class ClientRequest
     {
         public int Id { get; set; }

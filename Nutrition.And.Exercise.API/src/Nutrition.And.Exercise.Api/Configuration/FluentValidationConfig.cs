@@ -1,25 +1,21 @@
-﻿using System.Text.Json.Serialization;
+﻿using FluentValidation.AspNetCore;
+using System.Text.Json.Serialization;
+using static Nutrition.And.Exercise.Borders.Commands.RegisterClientCommand;
 
 namespace Nutrition.And.Exercise.Api.Configuration
 {
-    public class FluentValidationConfig
+    public static class FluentValidationConfig
     {
-        //public static void AddFluentValidationConfiguration(this IServiceCollection services)
-        //{
-        //    services.AddControllers()
-        //        .AddNewtonsoftJson(x =>
-        //        {
-        //            x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-        //            x.SerializerSettings.Converters.Add(new StringEnumConverter());
-        //        })
-        //        .AddJsonOptions(p => p.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()))
-        //        .AddFluentValidation(p =>
-        //        {
-        //            p.RegisterValidatorsFromAssemblyContaining<RegisterClientValidation>();
-        //            p.ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-BR");
-        //        });
+        public static void AddFluentValidationConfiguration(this IServiceCollection services)
+        {
+            services.AddControllers()
+                .AddFluentValidation(p =>
+                {
+                    p.RegisterValidatorsFromAssemblyContaining<RegisterClientValidation>();
+                    p.ValidatorOptions.LanguageManager.Culture = new System.Globalization.CultureInfo("pt-BR");
+                });
 
-        //    services.AddFluentValidationRulesToSwagger();
-        //}
+            //services.AddFluentValidationRulesToSwagger();
+        }
     }
 }
