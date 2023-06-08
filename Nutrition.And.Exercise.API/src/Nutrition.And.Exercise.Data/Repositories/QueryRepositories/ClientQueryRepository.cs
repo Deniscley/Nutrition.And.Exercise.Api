@@ -25,8 +25,6 @@ namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
 
         public async Task InsertCustomer(Client client)
         {
-            //using (SqlConnection connection = new SqlConnection(_context.ConnectionString))
-            //{
             try
             {
                 string sql = @"INSERT INTO [dbo].[Customers] (Id, Nome, DataNascimento) 
@@ -44,13 +42,7 @@ namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
             {
                 throw new Exception("Ocorreu um erro ao realizar a consulta" + ex.Message);
             }
-            //}
         }
-
-        //public async Task<IEnumerable<Client>> GetCustomersAsync()
-        //{
-
-        //}
 
         public async Task<Client?> GetClientAsync(Guid id)
         {
