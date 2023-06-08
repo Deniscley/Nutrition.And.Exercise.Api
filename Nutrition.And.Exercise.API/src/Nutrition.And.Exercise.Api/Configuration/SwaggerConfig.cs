@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using Swashbuckle.AspNetCore.Swagger;
+using System.Reflection;
 
 namespace Nutrition.And.Exercise.Api.Configuration
 {

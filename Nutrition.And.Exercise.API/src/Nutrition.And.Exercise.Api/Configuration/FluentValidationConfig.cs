@@ -8,13 +8,6 @@ namespace Nutrition.And.Exercise.Api.Configuration
     {
         public static void AddFluentValidationConfiguration(this IServiceCollection services)
         {
-            services.AddControllers()
-                .AddFluentValidation(p =>
-                {
-                    p.RegisterValidatorsFromAssemblyContaining<RegisterClientValidation>();
-                    p.ValidatorOptions.LanguageManager.Culture = new System.Globalization.CultureInfo("pt-BR");
-                });
-
             //services.AddFluentValidationRulesToSwagger();
         }
     }
