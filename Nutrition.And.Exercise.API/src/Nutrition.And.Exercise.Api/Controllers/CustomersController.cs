@@ -18,18 +18,15 @@ namespace Nutrition.And.Exercise.Api.Controllers
         private readonly IClientUseCase _clientUseCase;
         private readonly IClientRepository _clientRepository;
         private readonly IMediatorHandler _mediatorHandler;
-        //private readonly IMapper _mapper;
 
         public CustomersController(IClientUseCase clientUseCase,
             IClientRepository clientRepository,
             IMediatorHandler mediatorHandler
-            //IMapper mapper
             )
         {
             _clientUseCase = clientUseCase;
             _clientRepository = clientRepository;
             _mediatorHandler = mediatorHandler;
-            //_mapper = mapper;
         }
 
         /// <summary>
