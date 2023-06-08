@@ -1,4 +1,6 @@
-﻿namespace Nutrition.And.Exercise.Api.Configuration
+﻿using System.Reflection;
+
+namespace Nutrition.And.Exercise.Api.Configuration
 {
     public static class SwaggerConfig
     {
@@ -6,7 +8,30 @@
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Nutrition & Exercise", Version = "v1" });
+                c.SwaggerDoc("v1",
+                    new Microsoft.OpenApi.Models.OpenApiInfo 
+                    { Title = "Nutrition & Exercise",
+                      Version = "v1",
+                      Description = "API of the Nutrition & Exercise application.",
+                      Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                      {
+                          Name = "Deniscley Marfran",
+                          Email = "deniscleymaf@outlook.com",
+                          Url = new Uri("https://github.com/Deniscley")
+                      },
+                      License = new Microsoft.OpenApi.Models.OpenApiLicense
+                      {
+                          Name = "OSD",
+                          Url = new Uri("https://opensource.org/osd")
+                      },
+                      TermsOfService = new Uri("https://opensource.org/osd")
+                    });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile) ;
+                c.IncludeXmlComments(xmlPath);
+                xmlPath = Path.Combine(AppContext.BaseDirectory, "Nutrition.And.Exercise.Borders.xml");
+                c.IncludeXmlComments(xmlPath);
             });
         }
 

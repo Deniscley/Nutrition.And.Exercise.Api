@@ -34,8 +34,8 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// </summary>
         /// <returns>Get client list.</returns>
         [HttpGet]
-        [ProducesResponseType(200, Type = typeof(ClientResponse))]
-        [ProducesResponseType(404)]
+        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get()
         {
             var response = await _clientUseCase.GetCustomersAsync();
@@ -45,19 +45,20 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// <summary>
         /// Client by id
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id" example="123">Id of Client</param>
         /// <returns>Get client by id</returns>
         [HttpGet("{id}")]
-        [ProducesResponseType(200, Type = typeof(ClientResponse))]
-        [ProducesResponseType(404)]
+        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get(Guid id)
         {
             return Ok(await _clientUseCase.GetClientAsync(id));
         }
 
         [HttpGet("clients")]
-        [ProducesResponseType(200, Type = typeof(ClientResponse))]
-        [ProducesResponseType(404)]
+        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Index()
         {
             var result = await _mediatorHandler
@@ -68,18 +69,30 @@ namespace Nutrition.And.Exercise.Api.Controllers
 
         // POST api/<CustomersController>
         [HttpPost]
+        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public void Post([FromBody] string value)
         {
         }
 
         // PUT api/<CustomersController>/5
         [HttpPut("{id}")]
+        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<CustomersController>/5
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id" example="123">Id of Client</param>
+        /// <remarks>When deleting the client, it will be permanently removed from the base.</remarks>
         [HttpDelete("{id}")]
+        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public void Delete(int id)
         {
         }
