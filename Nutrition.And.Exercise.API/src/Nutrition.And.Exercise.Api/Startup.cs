@@ -17,7 +17,7 @@ namespace Nutrition.And.Exercise.Api
             //// Add services to the container.
           
             services.AddControllers();
-            services.AddFluentValidationConfiguration();
+            //services.AddFluentValidationConfiguration();
             services.AddAutoMapperConfiguration();
 
             //// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -32,6 +32,8 @@ namespace Nutrition.And.Exercise.Api
         {
             // Configure the HTTP request pipeline.
             app.UseSwaggerConfiguration();
+
+            app.UseDatabaseConfiguration();
 
             app.UseHttpsRedirection();
 
