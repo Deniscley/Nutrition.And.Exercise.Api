@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Nutrition.And.Exercise.Api.Configuration;
+using Serilog;
 
 namespace Nutrition.And.Exercise.Api
 {
@@ -17,7 +18,7 @@ namespace Nutrition.And.Exercise.Api
             //// Add services to the container.
           
             services.AddControllers();
-            //services.AddFluentValidationConfiguration();
+            services.AddFluentValidationConfiguration();
             services.AddAutoMapperConfiguration();
 
             //// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -48,6 +49,7 @@ namespace Nutrition.And.Exercise.Api
         IConfiguration Configuration { get; }
         void Configure(WebApplication app, IWebHostEnvironment environment);
         void ConfigureServices(IServiceCollection services);
+
     }
 
     public static class StartupExtensions

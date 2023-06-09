@@ -28,6 +28,8 @@ namespace Nutrition.And.Exercise.Api.Configuration
                       TermsOfService = new Uri("https://opensource.org/osd")
                     });
 
+                c.AddFluentValidationRulesScoped();
+
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile) ;
                 c.IncludeXmlComments(xmlPath);
