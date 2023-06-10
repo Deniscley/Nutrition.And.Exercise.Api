@@ -15,28 +15,39 @@ namespace Nutrition.And.Exercise.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            //// Add services to the container.
-          
             services.AddControllers();
+
             services.AddFluentValidationConfiguration();
+
             services.AddAutoMapperConfiguration();
 
-            //// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            services.AddEndpointsApiExplorer();
-            services.AddSwaggerConfiguration();
-            services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<Startup>());
             services.AddDatabaseConfiguration(Configuration);
+
             services.AddDependencyInjectionConfiguration();
+
+            services.AddEndpointsApiExplorer();
+
+            services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<Startup>());
+
+            services.AddSwaggerConfiguration();
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment environment)
         {
-            // Configure the HTTP request pipeline.
+            app.UseExceptionHandler("/error");
+
+            if(environment.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
             app.UseSwaggerConfiguration();
 
             app.UseDatabaseConfiguration();
 
             app.UseHttpsRedirection();
+
+            app.UseRouting();
 
             app.UseAuthorization();
 
