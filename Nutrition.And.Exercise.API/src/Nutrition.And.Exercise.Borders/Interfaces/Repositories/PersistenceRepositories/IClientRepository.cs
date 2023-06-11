@@ -11,7 +11,7 @@ namespace Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepo
 {
     public interface IClientRepository : IRepository<Client>
     {
-        Task<Client> GetClientAsync(Guid id);
+        Task<ClientResponse> GetClientAsync(Guid id);
         Task<IEnumerable<Client>> GetCustomersAsync();
         void InsertCustomer(Client client);
     }
