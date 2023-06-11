@@ -1,6 +1,7 @@
 ﻿using Azure.Core;
 using Dapper;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using Nutrition.And.Exercise.Borders.Entities;
 using Nutrition.And.Exercise.Borders.Interfaces.Data;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.QueryRepositories;
@@ -16,11 +17,11 @@ namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
 {
     public class ClientQueryRepository : IClientQueryRepository
     {
-        private readonly DataContext _context;
+        private string ConnectionString;
 
-        public ClientQueryRepository(DataContext context)
+        public ClientQueryRepository(IConfiguration configuration)
         {
-            _context = context;
+            ConnectionString = configuration.GetConnectionString("DefaultConnection");
         }
 
         public async Task InsertCustomer(Client client)
@@ -35,8 +36,9 @@ namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
                 parameters.Add("@nome", client.Nome, DbType.AnsiString, size: 255);
                 parameters.Add("@DataNascimento", client.DataNascimento, DbType.DateTime);
 
-                using SqlConnection connection = new SqlConnection(_context.ConnectionString);
-                await connection.ExecuteAsync(sql, parameters);
+                //using SqlConnection connection = new SqlConnection(ConnectionString);
+                //connection.Open();
+                //await connection.ExecuteAsync(sql, parameters);
             }
             catch (Exception ex)
             {
@@ -58,7 +60,8 @@ namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
                 DynamicParameters parameters = new();
                 parameters.Add("@id", id, DbType.Guid);
 
-                using SqlConnection connection = new SqlConnection(_context.ConnectionString);
+                using SqlConnection connection = new SqlConnection(ConnectionString);
+                connection.Open();
                 return await connection.QueryFirstOrDefaultAsync<Client?>(sql, parameters);
             }
             catch (Exception ex)
