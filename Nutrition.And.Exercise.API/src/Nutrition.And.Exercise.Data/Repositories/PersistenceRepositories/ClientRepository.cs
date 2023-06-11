@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Azure;
+using Microsoft.EntityFrameworkCore;
 using Nutrition.And.Exercise.Borders.Dtos.Response;
 using Nutrition.And.Exercise.Borders.Entities;
 using Nutrition.And.Exercise.Borders.Interfaces.Data;
@@ -15,10 +17,12 @@ namespace Nutrition.And.Exercise.Data.Repositories.PersistenceRepositories
     public class ClientRepository : IClientRepository
     {
         private readonly DataContext _context;
+        private readonly IMapper mapper;
 
-        public ClientRepository(DataContext context)
+        public ClientRepository(DataContext context, IMapper mapper)
         {
             this._context = context;
+            this.mapper = mapper;   
         }
 
         public IUnitOfWork UnitOfWork => _context;
@@ -28,9 +32,11 @@ namespace Nutrition.And.Exercise.Data.Repositories.PersistenceRepositories
             return await _context.Customers.AsNoTracking().ToListAsync();
         }
 
-        public async Task<Client> GetClientAsync(Guid id)
+        public async Task<ClientResponse> GetClientAsync(Guid id)
         {
-            return await _context.Customers.FirstOrDefaultAsync(c => c.Id == id);
+            var response = await _context.Customers.FirstOrDefaultAsync(c => c.Id == id);
+            var clientResponse = mapper.Map<Client, ClientResponse>(response);
+            return clientResponse;
         }
 
         public void InsertCustomer(Client client)

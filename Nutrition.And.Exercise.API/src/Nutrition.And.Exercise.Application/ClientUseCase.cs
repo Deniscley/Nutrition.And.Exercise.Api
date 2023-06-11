@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Nutrition.And.Exercise.Borders.Dtos.Response;
 using Nutrition.And.Exercise.Borders.Entities;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
 using Nutrition.And.Exercise.Borders.Interfaces.UseCases;
@@ -23,10 +24,9 @@ namespace Nutrition.And.Exercise.UseCases
             return response;
         }
 
-        public async Task<Client> GetClientAsync(Guid id)
+        public async Task<ClientResponse> GetClientAsync(Guid id)
         {
             var response = await clientRepository.GetClientAsync(id);
-            //var client = Mapper.Map<clientResponse>(response);
             return response;
         }
     }
