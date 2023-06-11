@@ -18,14 +18,7 @@ namespace Nutrition.And.Exercise.Data.Context
     {
         private readonly IMediatorHandler _mediatorHandler;
 
-        IConfiguration Configuration { get; }
-        public string ConnectionString { get; set; }
         public DbSet<Client> Customers { get; set; }
-
-        public DataContext()
-        {
-            ConnectionString = Configuration.GetConnectionString("DefaultConnection");
-        }
 
         public DataContext(DbContextOptions options, IMediatorHandler mediatorHandler) : base(options)
         {

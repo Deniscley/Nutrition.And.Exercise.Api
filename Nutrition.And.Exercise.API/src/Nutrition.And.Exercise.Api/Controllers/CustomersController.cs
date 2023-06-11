@@ -4,9 +4,8 @@ using Nutrition.And.Exercise.Borders.Commands;
 using Nutrition.And.Exercise.Borders.Dtos.Response;
 using Nutrition.And.Exercise.Borders.Entities;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
+using Nutrition.And.Exercise.Borders.Interfaces.Repositories.QueryRepositories;
 using Nutrition.And.Exercise.Borders.Mediator;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Nutrition.And.Exercise.Api.Controllers
 {
@@ -15,13 +14,16 @@ namespace Nutrition.And.Exercise.Api.Controllers
     public class CustomersController : MainController
     {
         private readonly IClientRepository _clientRepository;
+        private readonly IClientQueryRepository _clientQueryRepository;
         private readonly IMediatorHandler _mediatorHandler;
 
         public CustomersController(IClientRepository clientRepository,
+            IClientQueryRepository clientQueryRepository,
             IMediatorHandler mediatorHandler
             )
         {
             _clientRepository = clientRepository;
+            _clientQueryRepository = clientQueryRepository;
             _mediatorHandler = mediatorHandler;
         }
 
@@ -49,7 +51,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get(Guid id)
         {
-            return Ok(await _clientRepository.GetClientAsync(id));
+            return Ok(await _clientQueryRepository.GetClientAsync(id));
         }
 
         [HttpGet("clients")]
