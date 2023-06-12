@@ -11,7 +11,7 @@ namespace Nutrition.And.Exercise.Data.Context
     {
         public static void OnApplyConfiguration(ModelBuilder modelBuilder)
         {
-            //modelBuilder.ApplyConfiguration(new ClientConfiguration());
+            //modelBuilder.ApplyConfiguration(new ClientConfigurationMap());
         }
     }
 }
