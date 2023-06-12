@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.AspNetCore;
+using Newtonsoft.Json;
 using Nutrition.And.Exercise.Borders.Commands;
 using System;
 using System.Globalization;
@@ -12,6 +13,9 @@ namespace Nutrition.And.Exercise.Api.Configuration
     {
         public static void AddFluentValidationConfiguration(this IServiceCollection services)
         {
+            services.AddControllers()
+                .AddNewtonsoftJson(x => 
+                x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             //services.AddFluentValidationRulesToSwagger();
         }
     }
