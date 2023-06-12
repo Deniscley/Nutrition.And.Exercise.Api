@@ -36,9 +36,9 @@ namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
                 parameters.Add("@nome", client.Nome, DbType.AnsiString, size: 255);
                 parameters.Add("@DataNascimento", client.DataNascimento, DbType.DateTime);
 
-                //using SqlConnection connection = new SqlConnection(ConnectionString);
-                //connection.Open();
-                //await connection.ExecuteAsync(sql, parameters);
+                using SqlConnection connection = new SqlConnection(ConnectionString);
+                connection.Open();
+                await connection.ExecuteAsync(sql, parameters);
             }
             catch (Exception ex)
             {

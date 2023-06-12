@@ -5,10 +5,12 @@ using Nutrition.And.Exercise.Borders.Entities;
 using Nutrition.And.Exercise.Borders.Interfaces.Data;
 using Nutrition.And.Exercise.Borders.Mediator;
 using Nutrition.And.Exercise.Borders.Messages;
+using Nutrition.And.Exercise.Data.Configuration;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,6 +42,8 @@ namespace Nutrition.And.Exercise.Data.Context
                 .SelectMany(e => e.GetForeignKeys())) relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataContext).Assembly);
+
+            ApplyConfigurationContext.OnApplyConfiguration(modelBuilder);
         }
 
         public async Task<bool> Commit()
