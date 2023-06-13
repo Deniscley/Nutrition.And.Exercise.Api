@@ -1,4 +1,4 @@
-﻿using Nutrition.And.Exercise.Data.Mappings;
+﻿using Nutrition.And.Exercise.Data.MappingsProfile;
 
 namespace Nutrition.And.Exercise.Api.Configuration
 {

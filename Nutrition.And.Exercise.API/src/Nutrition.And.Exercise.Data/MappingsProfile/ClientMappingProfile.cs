@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrition.And.Exercise.Data.Mappings
+namespace Nutrition.And.Exercise.Data.MappingsProfile
 {
     public class ClientMappingProfile : Profile
     {
