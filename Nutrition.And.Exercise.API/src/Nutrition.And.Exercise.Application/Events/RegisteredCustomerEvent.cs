@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrition.And.Exercise.Borders.Events
+namespace Nutrition.And.Exercise.Application.Events
 {
     public class RegisteredCustomerEvent : Event
     {

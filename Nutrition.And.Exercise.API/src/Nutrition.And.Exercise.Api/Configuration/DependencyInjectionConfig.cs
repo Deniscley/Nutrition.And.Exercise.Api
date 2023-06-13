@@ -1,6 +1,7 @@
 ﻿using MediatR;
-using Nutrition.And.Exercise.Borders.Commands;
-using Nutrition.And.Exercise.Borders.Events;
+using Nutrition.And.Exercise.Application.Commands;
+using Nutrition.And.Exercise.Application.CommandsHandler;
+using Nutrition.And.Exercise.Application.Events;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.QueryRepositories;
 using Nutrition.And.Exercise.Borders.Mediator;
@@ -29,7 +30,7 @@ namespace Nutrition.And.Exercise.Api.Configuration
             services.AddScoped<INotificationHandler<RegisteredCustomerEvent>, ClientEventHandler>();
 
             //// Context
-            //services.AddScoped<DataContext>();
+            services.AddScoped<DataContext>();
         }
     }
 }

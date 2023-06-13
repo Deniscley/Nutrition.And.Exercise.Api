@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrition.And.Exercise.Data.Configuration
+namespace Nutrition.And.Exercise.Data.ConfigurationMappings
 {
-    public class ClientConfigurationMap : IEntityTypeConfiguration<Client>
+    public class ClientMapping : IEntityTypeConfiguration<Client>
     {
         /// EF Core - Fluent API
         public void Configure(EntityTypeBuilder<Client> builder)

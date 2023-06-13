@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Nutrition.And.Exercise.Borders.Commands;
+using Nutrition.And.Exercise.Application.Commands;
 using Nutrition.And.Exercise.Borders.Dtos.Response;
 using Nutrition.And.Exercise.Borders.Entities;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
