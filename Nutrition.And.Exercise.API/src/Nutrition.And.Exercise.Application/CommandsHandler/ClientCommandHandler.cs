@@ -1,7 +1,8 @@
 ﻿using FluentValidation.Results;
 using MediatR;
+using Nutrition.And.Exercise.Application.Commands;
+using Nutrition.And.Exercise.Application.Events;
 using Nutrition.And.Exercise.Borders.Entities;
-using Nutrition.And.Exercise.Borders.Events;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
 using Nutrition.And.Exercise.Borders.Messages;
 using System;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrition.And.Exercise.Borders.Commands
+namespace Nutrition.And.Exercise.Application.CommandsHandler
 {
     public class ClientCommandHandler : CommandHandler, 
         IRequestHandler<RegisterClientCommand, ValidationResult>

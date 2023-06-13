@@ -5,7 +5,7 @@ using Nutrition.And.Exercise.Borders.Entities;
 using Nutrition.And.Exercise.Borders.Interfaces.Data;
 using Nutrition.And.Exercise.Borders.Mediator;
 using Nutrition.And.Exercise.Borders.Messages;
-using Nutrition.And.Exercise.Data.Configuration;
+using Nutrition.And.Exercise.Data.ConfigurationMappings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

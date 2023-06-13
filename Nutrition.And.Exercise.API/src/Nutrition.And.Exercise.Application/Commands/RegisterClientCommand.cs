@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrition.And.Exercise.Borders.Commands
+namespace Nutrition.And.Exercise.Application.Commands
 {
     public class RegisterClientCommand : Command
     {
