@@ -1,17 +1,15 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Nutrition.And.Exercise.Api.Configuration;
-using Serilog;
+﻿using Nutrition.And.Exercise.Api.Configuration;
 
 namespace Nutrition.And.Exercise.Api
 {
     public class Startup : IStartup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
