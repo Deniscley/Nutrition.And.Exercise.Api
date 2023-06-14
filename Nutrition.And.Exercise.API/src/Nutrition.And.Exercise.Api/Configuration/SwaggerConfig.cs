@@ -30,7 +30,7 @@ namespace Nutrition.And.Exercise.Api.Configuration
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile) ;
                 c.IncludeXmlComments(xmlPath);
-                xmlPath = Path.Combine(AppContext.BaseDirectory, "Nutrition.And.Exercise.Borders.xml");
+                xmlPath = Path.Combine(AppContext.BaseDirectory, "Nutrition.And.Exercise.Domain.xml");
                 c.IncludeXmlComments(xmlPath);
             });
         }

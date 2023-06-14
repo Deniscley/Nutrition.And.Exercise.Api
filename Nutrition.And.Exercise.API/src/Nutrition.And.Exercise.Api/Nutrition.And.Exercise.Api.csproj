@@ -48,13 +48,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Nutrition.And.Exercise.Borders\Nutrition.And.Exercise.Borders.csproj" />
+    <ProjectReference Include="..\Nutrition.And.Exercise.Domain\Nutrition.And.Exercise.Domain.csproj" />
     <ProjectReference Include="..\Nutrition.And.Exercise.Data\Nutrition.And.Exercise.Data.csproj" />
     <ProjectReference Include="..\Nutrition.And.Exercise.Application\Nutrition.And.Exercise.Application.csproj" />
   </ItemGroup>
 
 	<ItemGroup>
-		<Using Include="Nutrition.And.Exercise.Borders.Entities" />
+		<Using Include="Nutrition.And.Exercise.Domain.Entities" />
 	</ItemGroup>
 
 </Project>

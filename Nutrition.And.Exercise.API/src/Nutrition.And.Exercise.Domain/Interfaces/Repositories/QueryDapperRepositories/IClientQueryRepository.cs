@@ -1,6 +1,6 @@
-﻿using Nutrition.And.Exercise.Borders.Entities;
+﻿using Nutrition.And.Exercise.Domain.Entities;
 
-namespace Nutrition.And.Exercise.Borders.Interfaces.Repositories.QueryRepositories
+namespace Nutrition.And.Exercise.Domain.Interfaces.Repositories.QueryDapperRepositories
 {
     public interface IClientQueryRepository
     {

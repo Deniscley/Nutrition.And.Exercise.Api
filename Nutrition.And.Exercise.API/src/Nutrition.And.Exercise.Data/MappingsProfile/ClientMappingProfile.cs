@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Nutrition.And.Exercise.Borders.Dtos.Response;
-using Nutrition.And.Exercise.Borders.Entities;
+using Nutrition.And.Exercise.Domain.Dtos.Response;
+using Nutrition.And.Exercise.Domain.Entities;
 
 namespace Nutrition.And.Exercise.Data.MappingsProfile
 {

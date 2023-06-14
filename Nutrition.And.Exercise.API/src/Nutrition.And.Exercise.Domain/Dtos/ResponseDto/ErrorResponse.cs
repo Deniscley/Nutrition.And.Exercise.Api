@@ -1,4 +1,4 @@
-﻿namespace Nutrition.And.Exercise.Borders.Dtos.ResponseDto
+﻿namespace Nutrition.And.Exercise.Domain.Dtos.ResponseDto
 {
     public class ErrorResponse
     {

@@ -1,8 +1,8 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
-using Nutrition.And.Exercise.Borders.Entities;
-using Nutrition.And.Exercise.Borders.Interfaces.Repositories.QueryRepositories;
+using Nutrition.And.Exercise.Domain.Entities;
+using Nutrition.And.Exercise.Domain.Interfaces.Repositories.QueryDapperRepositories;
 using System.Data;
 
 namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
