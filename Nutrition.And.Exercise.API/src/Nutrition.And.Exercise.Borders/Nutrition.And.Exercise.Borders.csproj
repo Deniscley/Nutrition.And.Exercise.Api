@@ -39,7 +39,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\Repositories\QueryRepositories\" />
+    <ProjectReference Include="..\Nutrition.And.Exercise.Core\Nutrition.And.Exercise.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\Repositories\QueryDapperRepositories\" />
   </ItemGroup>
 
 </Project>

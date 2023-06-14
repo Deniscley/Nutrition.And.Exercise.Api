@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Nutrition.And.Exercise.Borders.Messages
+namespace Nutrition.And.Exercise.Core.Messages
 {
     public class Event : Message, INotification
     {

@@ -4,7 +4,7 @@ using Nutrition.And.Exercise.Application.Commands;
 using Nutrition.And.Exercise.Application.Events;
 using Nutrition.And.Exercise.Borders.Entities;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
-using Nutrition.And.Exercise.Borders.Messages;
+using Nutrition.And.Exercise.Core.Messages;
 
 namespace Nutrition.And.Exercise.Application.CommandsHandler
 {

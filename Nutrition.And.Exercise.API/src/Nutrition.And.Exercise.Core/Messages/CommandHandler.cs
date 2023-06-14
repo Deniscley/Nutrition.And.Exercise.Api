@@ -1,7 +1,7 @@
 ﻿using FluentValidation.Results;
-using Nutrition.And.Exercise.Borders.Interfaces.Data;
+using Nutrition.And.Exercise.Core.Data;
 
-namespace Nutrition.And.Exercise.Borders.Messages
+namespace Nutrition.And.Exercise.Core.Messages
 {
     public abstract class CommandHandler
     {

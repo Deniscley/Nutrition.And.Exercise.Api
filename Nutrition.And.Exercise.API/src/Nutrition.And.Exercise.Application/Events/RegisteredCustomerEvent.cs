@@ -1,4 +1,4 @@
-﻿using Nutrition.And.Exercise.Borders.Messages;
+﻿using Nutrition.And.Exercise.Core.Messages;
 
 namespace Nutrition.And.Exercise.Application.Events
 {

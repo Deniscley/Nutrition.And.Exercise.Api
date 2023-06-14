@@ -1,4 +1,4 @@
-﻿namespace Nutrition.And.Exercise.Borders.Interfaces.Data
+﻿namespace Nutrition.And.Exercise.Core.Data
 {
     public interface IUnitOfWork
     {

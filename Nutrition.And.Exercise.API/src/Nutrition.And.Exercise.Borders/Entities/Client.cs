@@ -1,5 +1,5 @@
-﻿using Nutrition.And.Exercise.Borders.DomainObjects;
-using Nutrition.And.Exercise.Borders.Interfaces.Data;
+﻿using Nutrition.And.Exercise.Core.Data;
+using Nutrition.And.Exercise.Core.DomainObjects;
 
 namespace Nutrition.And.Exercise.Borders.Entities
 {
