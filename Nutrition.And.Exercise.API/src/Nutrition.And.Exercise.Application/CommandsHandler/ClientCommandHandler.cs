@@ -2,8 +2,8 @@
 using MediatR;
 using Nutrition.And.Exercise.Application.Commands;
 using Nutrition.And.Exercise.Application.Events;
-using Nutrition.And.Exercise.Borders.Entities;
-using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
+using Nutrition.And.Exercise.Domain.Entities;
+using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Core.Messages;
 
 namespace Nutrition.And.Exercise.Application.CommandsHandler

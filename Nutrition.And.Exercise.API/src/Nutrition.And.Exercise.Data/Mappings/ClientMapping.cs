@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Nutrition.And.Exercise.Borders.Entities;
+using Nutrition.And.Exercise.Domain.Entities;
 
 namespace Nutrition.And.Exercise.Data.ConfigurationMappings
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Nutrition.And.Exercise.Borders.Dtos.ResponseDto;
+using Nutrition.And.Exercise.Domain.Dtos.ResponseDto;
 using System.Diagnostics;
 
 namespace Nutrition.And.Exercise.Api.Controllers

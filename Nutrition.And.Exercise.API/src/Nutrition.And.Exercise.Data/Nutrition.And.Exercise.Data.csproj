@@ -22,7 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Nutrition.And.Exercise.Borders\Nutrition.And.Exercise.Borders.csproj" />
+		<ProjectReference Include="..\Nutrition.And.Exercise.Domain\Nutrition.And.Exercise.Domain.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

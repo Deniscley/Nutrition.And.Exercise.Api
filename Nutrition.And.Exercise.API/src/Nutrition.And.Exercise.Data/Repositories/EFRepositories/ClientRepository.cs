@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Nutrition.And.Exercise.Borders.Dtos.Response;
-using Nutrition.And.Exercise.Borders.Entities;
+using Nutrition.And.Exercise.Domain.Dtos.Response;
+using Nutrition.And.Exercise.Domain.Entities;
 using Nutrition.And.Exercise.Core.Data;
-using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
+using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Data.Context;
 
 namespace Nutrition.And.Exercise.Data.Repositories.PersistenceRepositories

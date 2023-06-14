@@ -1,7 +1,7 @@
 ﻿using Nutrition.And.Exercise.Core.Data;
 using Nutrition.And.Exercise.Core.DomainObjects;
 
-namespace Nutrition.And.Exercise.Borders.Entities
+namespace Nutrition.And.Exercise.Domain.Entities
 {
     public class Client : Entity, IAggregateRoot
     {

@@ -1,8 +1,8 @@
-﻿using Nutrition.And.Exercise.Borders.Dtos.Response;
-using Nutrition.And.Exercise.Borders.Entities;
+﻿using Nutrition.And.Exercise.Domain.Dtos.Response;
+using Nutrition.And.Exercise.Domain.Entities;
 using Nutrition.And.Exercise.Core.Data;
 
-namespace Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories
+namespace Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories
 {
     public interface IClientRepository : IRepository<Client>
     {
