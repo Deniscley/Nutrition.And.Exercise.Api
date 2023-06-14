@@ -1,17 +1,9 @@
-﻿using Azure.Core;
-using Dapper;
+﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Nutrition.And.Exercise.Borders.Entities;
-using Nutrition.And.Exercise.Borders.Interfaces.Data;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.QueryRepositories;
-using Nutrition.And.Exercise.Data.Context;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
 {

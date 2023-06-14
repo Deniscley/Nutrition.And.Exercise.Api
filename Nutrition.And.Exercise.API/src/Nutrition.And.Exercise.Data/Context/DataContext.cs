@@ -1,17 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Nutrition.And.Exercise.Borders.DomainObjects;
 using Nutrition.And.Exercise.Borders.Entities;
 using Nutrition.And.Exercise.Borders.Interfaces.Data;
 using Nutrition.And.Exercise.Borders.Mediator;
 using Nutrition.And.Exercise.Borders.Messages;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Nutrition.And.Exercise.Data.Context
 {
