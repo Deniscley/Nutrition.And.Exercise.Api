@@ -3,7 +3,7 @@ using Nutrition.And.Exercise.Application.Commands;
 using Nutrition.And.Exercise.Borders.Dtos.Response;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.QueryRepositories;
-using Nutrition.And.Exercise.Borders.Mediator;
+using Nutrition.And.Exercise.Core.Mediator;
 
 namespace Nutrition.And.Exercise.Api.Controllers
 {
@@ -58,7 +58,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         public async Task<IActionResult> Index()
         {
             var result = await _mediatorHandler
-                .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Cascão", DateTime.Now));
+                .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Naruto", DateTime.Now));
 
             return CustomResponse(result);
         }

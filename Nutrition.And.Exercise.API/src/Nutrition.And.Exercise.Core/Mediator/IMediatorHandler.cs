@@ -1,7 +1,7 @@
-﻿using Nutrition.And.Exercise.Borders.Messages;
+﻿using Nutrition.And.Exercise.Core.Messages;
 using FluentValidation.Results;
 
-namespace Nutrition.And.Exercise.Borders.Mediator
+namespace Nutrition.And.Exercise.Core.Mediator
 {
     public interface IMediatorHandler
     {

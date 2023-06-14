@@ -1,8 +1,8 @@
 ﻿using FluentValidation.Results;
 using MediatR;
-using Nutrition.And.Exercise.Borders.Messages;
+using Nutrition.And.Exercise.Core.Messages;
 
-namespace Nutrition.And.Exercise.Borders.Mediator
+namespace Nutrition.And.Exercise.Core.Mediator
 {
     public class MediatorHandler : IMediatorHandler
     {

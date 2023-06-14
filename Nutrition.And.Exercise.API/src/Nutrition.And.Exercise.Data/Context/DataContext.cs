@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Nutrition.And.Exercise.Borders.DomainObjects;
 using Nutrition.And.Exercise.Borders.Entities;
-using Nutrition.And.Exercise.Borders.Interfaces.Data;
-using Nutrition.And.Exercise.Borders.Mediator;
-using Nutrition.And.Exercise.Borders.Messages;
+using Nutrition.And.Exercise.Core.Data;
+using Nutrition.And.Exercise.Core.DomainObjects;
+using Nutrition.And.Exercise.Core.Mediator;
+using Nutrition.And.Exercise.Core.Messages;
 using System.ComponentModel.DataAnnotations;
 
 namespace Nutrition.And.Exercise.Data.Context

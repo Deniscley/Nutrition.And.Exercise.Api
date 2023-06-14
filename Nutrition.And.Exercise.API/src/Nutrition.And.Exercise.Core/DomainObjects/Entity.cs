@@ -1,6 +1,6 @@
-﻿using Nutrition.And.Exercise.Borders.Messages;
+﻿using Nutrition.And.Exercise.Core.Messages;
 
-namespace Nutrition.And.Exercise.Borders.DomainObjects
+namespace Nutrition.And.Exercise.Core.DomainObjects
 {
     public abstract class Entity
     {
