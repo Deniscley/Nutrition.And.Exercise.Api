@@ -4,7 +4,7 @@ using Nutrition.And.Exercise.Application.CommandsHandler;
 using Nutrition.And.Exercise.Application.Events;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.PersistenceRepositories;
 using Nutrition.And.Exercise.Borders.Interfaces.Repositories.QueryRepositories;
-using Nutrition.And.Exercise.Borders.Mediator;
+using Nutrition.And.Exercise.Core.Mediator;
 using Nutrition.And.Exercise.Data.Context;
 using Nutrition.And.Exercise.Data.Repositories.PersistenceRepositories;
 using Nutrition.And.Exercise.Data.Repositories.QueryRepositories;

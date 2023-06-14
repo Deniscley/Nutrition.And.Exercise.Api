@@ -1,7 +1,7 @@
 ﻿using FluentValidation.Results;
 using MediatR;
 
-namespace Nutrition.And.Exercise.Borders.Messages
+namespace Nutrition.And.Exercise.Core.Messages
 {
     public abstract class Command : Message, IRequest<ValidationResult>
     {
