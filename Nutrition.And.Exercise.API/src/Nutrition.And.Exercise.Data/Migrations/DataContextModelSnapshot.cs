@@ -22,7 +22,7 @@ namespace Nutrition.And.Exercise.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Nutrition.And.Exercise.Borders.Entities.Client", b =>
+            modelBuilder.Entity("Nutrition.And.Exercise.Domain.Entities.Client", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

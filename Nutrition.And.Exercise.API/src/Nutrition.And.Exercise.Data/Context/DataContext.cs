@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Nutrition.And.Exercise.Borders.Entities;
+using Nutrition.And.Exercise.Domain.Entities;
 using Nutrition.And.Exercise.Core.Data;
 using Nutrition.And.Exercise.Core.DomainObjects;
 using Nutrition.And.Exercise.Core.Mediator;

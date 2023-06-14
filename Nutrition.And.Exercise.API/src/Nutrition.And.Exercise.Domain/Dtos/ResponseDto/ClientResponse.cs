@@ -1,4 +1,4 @@
-﻿namespace Nutrition.And.Exercise.Borders.Dtos.Response
+﻿namespace Nutrition.And.Exercise.Domain.Dtos.Response
 {
     /// <summary>
     /// Object used to insert new customers.
