@@ -18,7 +18,7 @@ namespace Nutrition.And.Exercise.Api.Configuration
         {
             //// Repository
             services.AddScoped<IClientRepository, ClientRepository>();
-            services.AddScoped<IClientQueryRepository, ClientQueryRepository>();
+            services.AddScoped<IClientQueriesRepository, ClientQueriesRepository>();
 
             //// MediatorHandler
             services.AddScoped<IMediatorHandler, MediatorHandler>();
