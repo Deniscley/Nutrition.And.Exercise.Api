@@ -12,16 +12,16 @@ namespace Nutrition.And.Exercise.Api.Controllers
     public class CustomersController : MainController
     {
         private readonly IClientRepository _clientRepository;
-        private readonly IClientQueryRepository _clientQueryRepository;
+        private readonly IClientQueriesRepository _clientQueriesRepository;
         private readonly IMediatorHandler _mediatorHandler;
 
         public CustomersController(IClientRepository clientRepository,
-            IClientQueryRepository clientQueryRepository,
+            IClientQueriesRepository clientQueriesRepository,
             IMediatorHandler mediatorHandler
             )
         {
             _clientRepository = clientRepository;
-            _clientQueryRepository = clientQueryRepository;
+            _clientQueriesRepository = clientQueriesRepository;
             _mediatorHandler = mediatorHandler;
         }
 
@@ -49,7 +49,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get(Guid id)
         {
-            return Ok(await _clientQueryRepository.GetClientAsync(id));
+            return Ok(await _clientQueriesRepository.GetClientAsync(id));
         }
 
         [HttpGet("clients")]
