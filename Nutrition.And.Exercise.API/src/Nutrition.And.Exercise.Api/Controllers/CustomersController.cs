@@ -81,7 +81,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Customer removal by id
         /// </summary>
         /// <param name="id" example="123">Id of Client</param>
         /// <remarks>When deleting the client, it will be permanently removed from the base.</remarks>
