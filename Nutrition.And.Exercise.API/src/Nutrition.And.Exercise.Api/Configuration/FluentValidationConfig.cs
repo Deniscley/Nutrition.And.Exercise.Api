@@ -1,9 +1,5 @@
-﻿using FluentValidation;
-using FluentValidation.AspNetCore;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System;
-using System.Globalization;
 using System.Text.Json.Serialization;
 
 namespace Nutrition.And.Exercise.Api.Configuration
