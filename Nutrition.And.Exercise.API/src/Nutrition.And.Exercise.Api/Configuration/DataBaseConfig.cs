@@ -5,9 +5,11 @@ namespace Nutrition.And.Exercise.Api.Configuration
 {
     public static class DataBaseConfig
     {
-        public static void AddDatabaseConfiguration(this IServiceCollection services, IConfiguration configuration)
+        public static void AddDatabaseConfiguration(this IServiceCollection services,
+            IConfiguration configuration)
         {
-            services.AddDbContext<DataContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<DataContext>(options => 
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         }
 
         public static void UseDatabaseConfiguration(this IApplicationBuilder app)
