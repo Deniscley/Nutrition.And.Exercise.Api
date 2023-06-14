@@ -7,11 +7,11 @@ using System.Data;
 
 namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
 {
-    public class ClientQueryRepository : IClientQueryRepository
+    public class ClientQueriesRepository : IClientQueriesRepository
     {
         private string ConnectionString;
 
-        public ClientQueryRepository(IConfiguration configuration)
+        public ClientQueriesRepository(IConfiguration configuration)
         {
             ConnectionString = configuration.GetConnectionString("DefaultConnection");
         }
