@@ -21,12 +21,9 @@ namespace Nutrition.And.Exercise.Data.Repositories.PersistenceRepositories
 
         public IUnitOfWork UnitOfWork => _context;
 
-        public async Task<IEnumerable<ClientResponse>> GetCustomersAsync()
+        public async Task<IEnumerable<Client>> GetCustomersAsync()
         {
-            var response = await _context.Customers.AsNoTracking().ToListAsync();
-            var clientResponse = mapper.Map<List<Client>, IEnumerable<ClientResponse>>(response);
-            return clientResponse;
-
+            return await _context.Customers.AsNoTracking().ToListAsync();
         }
 
         public async Task<ClientResponse> GetClientAsync(Guid id)
