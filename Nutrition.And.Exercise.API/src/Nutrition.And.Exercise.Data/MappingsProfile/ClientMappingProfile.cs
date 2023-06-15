@@ -10,6 +10,8 @@ namespace Nutrition.And.Exercise.Data.MappingsProfile
             //CreateMap<ClientRequest, Client>()
             //    .ForMember(d => d.DataNascimento, o => o.MapFrom(x => x.DataNascimento.Date));
             CreateMap<Client, ClientResponse>();
+
+            CreateMap<List<Client>, IEnumerable<ClientResponse>>();
         }
     }
 }

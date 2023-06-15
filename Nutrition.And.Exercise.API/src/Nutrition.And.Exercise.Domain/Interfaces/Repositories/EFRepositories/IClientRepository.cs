@@ -7,7 +7,7 @@ namespace Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories
     public interface IClientRepository : IRepository<Client>
     {
         Task<ClientResponse> GetClientAsync(Guid id);
-        Task<IEnumerable<Client>> GetCustomersAsync();
+        Task<IEnumerable<ClientResponse>> GetCustomersAsync();
         void InsertCustomer(Client client);
     }
 }
