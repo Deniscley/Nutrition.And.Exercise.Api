@@ -1,11 +1,11 @@
 ﻿using Bogus;
-using Nutrition.And.Exercise.Domain.Dtos.Response;
+using Nutrition.And.Exercise.Domain.Entities;
 
-namespace Nutrition.And.Exercise.FakeData.ClientData
+namespace Nutrition.And.Exercise.FakeData.Entities
 {
-    public class ClientResponseFaker : Faker<ClientResponse>
+    public class ClientFaker : Faker<Client>
     {
-        public ClientResponseFaker()
+        public ClientFaker()
         {
             var id = new Faker().Random.Guid();
             RuleFor(p => p.Id, f => id);

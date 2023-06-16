@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Nutrition.And.Exercise.Application\Nutrition.And.Exercise.Application.csproj" />
     <ProjectReference Include="..\Nutrition.And.Exercise.Domain\Nutrition.And.Exercise.Domain.csproj" />
   </ItemGroup>
 
