@@ -3,18 +3,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using Nutrition.And.Exercise.Api.Controllers;
-using Nutrition.And.Exercise.Application.Commands;
 using Nutrition.And.Exercise.Core.Mediator;
 using Nutrition.And.Exercise.Domain.Dtos.Response;
-using Nutrition.And.Exercise.Domain.Entities;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.QueryDapperRepositories;
 using Nutrition.And.Exercise.FakeData.ClientData;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Nutrition.And.Exercise.Tests.Controllers
