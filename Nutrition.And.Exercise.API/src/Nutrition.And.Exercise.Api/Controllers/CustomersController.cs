@@ -58,6 +58,11 @@ namespace Nutrition.And.Exercise.Api.Controllers
             return Ok(await _clientQueriesRepository.GetClientAsync(id));
         }
 
+        /// <summary>
+        /// Register clients
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>Customer records command</returns>
         [HttpGet("clients")]
         [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
