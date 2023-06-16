@@ -10,6 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Nutrition.And.Exercise.Domain", "02.Nutrition.And.Exercise.Domain", "{667DF2A2-92B5-4F57-B961-17953B60C8D2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nutrition.And.Exercise.Services", "Nutrition.And.Exercise.Services\Nutrition.And.Exercise.Services.csproj", "{C5CEA887-7C00-4059-8351-61B373CF1BD3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{13FD2664-16FA-4912-BB1E-D9692782F8D7} = {13FD2664-16FA-4912-BB1E-D9692782F8D7}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.Nutrition.And.Exercise.Tests", "06.Nutrition.And.Exercise.Tests", "{22F71690-DAE5-4CB4-BC07-8FD7880B328E}"
 EndProject
@@ -34,7 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Nutrition.And.Exercise.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nutrition.And.Exercise.Core", "Nutrition.And.Exercise.Core\Nutrition.And.Exercise.Core.csproj", "{4C34EAF7-2727-4E84-B7BC-02AD10E8672F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nutrition.And.Exercise.Domain", "Nutrition.And.Exercise.Domain\Nutrition.And.Exercise.Domain.csproj", "{5DBF8434-BE14-4BAD-B201-C654E10EC510}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nutrition.And.Exercise.Domain", "Nutrition.And.Exercise.Domain\Nutrition.And.Exercise.Domain.csproj", "{5DBF8434-BE14-4BAD-B201-C654E10EC510}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,6 @@
-﻿namespace Nutrition.And.Exercise.Domain.Dtos.Response
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Nutrition.And.Exercise.Domain.Dtos.Response
 {
     /// <summary>
     /// Object used to insert new customers.
@@ -9,6 +11,7 @@
         /// Id of the client.
         /// </summary>
         /// <example>123</example>
+        [Required]
         public Guid Id { get; set; }
         /// <summary>
         /// Client name.
