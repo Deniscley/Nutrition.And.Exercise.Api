@@ -4,6 +4,7 @@ using Nutrition.And.Exercise.Domain.Dtos.Response;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.QueryDapperRepositories;
 using Nutrition.And.Exercise.Core.Mediator;
+//using SerilogTimings;
 
 namespace Nutrition.And.Exercise.Api.Controllers
 {
@@ -14,15 +15,18 @@ namespace Nutrition.And.Exercise.Api.Controllers
         private readonly IClientRepository _clientRepository;
         private readonly IClientQueriesRepository _clientQueriesRepository;
         private readonly IMediatorHandler _mediatorHandler;
+        //private readonly ILogger<CustomersController> _logger;
 
         public CustomersController(IClientRepository clientRepository,
             IClientQueriesRepository clientQueriesRepository,
             IMediatorHandler mediatorHandler
+            //ILogger<CustomersController> logger
             )
         {
             _clientRepository = clientRepository;
             _clientQueriesRepository = clientQueriesRepository;
             _mediatorHandler = mediatorHandler;
+            //_logger = logger;
         }
 
         /// <summary>
@@ -33,15 +37,19 @@ namespace Nutrition.And.Exercise.Api.Controllers
         [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get()
-        {
-            var response = await _clientRepository.GetCustomersAsync();
+        {   
+            //using (Operation.Time("Tempo para busca dos cliente."))
+            //{
+            //    _logger.LogInformation("Foi requisitado a busca dos clientes.");
+                var response = await _clientRepository.GetCustomersAsync();
 
-            if (response.Any())
-            {
-                return Ok(response);
-            }
+                if (response.Any())
+                {
+                    return Ok(response);
+                }
 
-            return NotFound();
+                return NotFound();
+            //}
         }
 
         /// <summary>
