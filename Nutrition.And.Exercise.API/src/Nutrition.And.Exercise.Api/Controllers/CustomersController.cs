@@ -35,7 +35,13 @@ namespace Nutrition.And.Exercise.Api.Controllers
         public async Task<IActionResult> Get()
         {
             var response = await _clientRepository.GetCustomersAsync();
-            return Ok(response);
+
+            if (response.Any())
+            {
+                return Ok(response);
+            }
+
+            return NotFound();
         }
 
         /// <summary>
@@ -58,7 +64,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         public async Task<IActionResult> Index()
         {
             var result = await _mediatorHandler
-                .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Naruto", DateTime.Now));
+                .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Sasuke", DateTime.Now));
 
             return CustomResponse(result);
         }
