@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using Nutrition.And.Exercise.Domain.Dtos.Response;
 using Nutrition.And.Exercise.Domain.Entities;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.QueryDapperRepositories;
 using System.Data;
@@ -38,7 +39,7 @@ namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
             }
         }
 
-        public async Task<Client?> GetClientAsync(Guid id)
+        public async Task<ClientResponse> GetClientAsync(Guid id)
         {
             try
             {
@@ -54,7 +55,7 @@ namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
 
                 using SqlConnection connection = new SqlConnection(ConnectionString);
                 connection.Open();
-                return await connection.QueryFirstOrDefaultAsync<Client?>(sql, parameters);
+                return await connection.QueryFirstOrDefaultAsync<ClientResponse>(sql, parameters);
             }
             catch (Exception ex)
             {

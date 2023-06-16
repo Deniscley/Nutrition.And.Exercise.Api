@@ -5,7 +5,7 @@ namespace Nutrition.And.Exercise.Domain.Dtos.Response
     /// <summary>
     /// Object used to insert new customers.
     /// </summary>
-    public class ClientResponse
+    public class ClientResponse : ICloneable
     {
         /// <summary>
         /// Id of the client.
@@ -23,5 +23,16 @@ namespace Nutrition.And.Exercise.Domain.Dtos.Response
         /// </summary>
         /// <example>1980-01-01</example>
         public DateTime DataNascimento { get; set; }
+
+        public object Clone()
+        {
+            var client = (ClientResponse)MemberwiseClone();
+            return client;
+        }
+
+        public ClientResponse TypedClone()
+        {
+            return (ClientResponse)Clone();
+        }
     }
 }
