@@ -11,25 +11,27 @@ namespace Nutrition.And.Exercise.Data.Repositories.PersistenceRepositories
     public class ClientRepository : IClientRepository
     {
         private readonly DataContext _context;
-        private readonly IMapper mapper;
+        private readonly IMapper _mapper;
 
         public ClientRepository(DataContext context, IMapper mapper)
         {
-            this._context = context;
-            this.mapper = mapper;   
+            _context = context;
+            _mapper = mapper;   
         }
 
         public IUnitOfWork UnitOfWork => _context;
 
-        public async Task<IEnumerable<Client>> GetCustomersAsync()
+        public async Task<IEnumerable<ClientResponse>> GetCustomersAsync()
         {
-            return await _context.Customers.AsNoTracking().ToListAsync();
+            var response = await _context.Customers.AsNoTracking().ToListAsync();
+            var clientsResponse = _mapper.Map<List<Client>, IEnumerable<ClientResponse>>(response);
+            return clientsResponse;
         }
 
         public async Task<ClientResponse> GetClientAsync(Guid id)
         {
             var response = await _context.Customers.FirstOrDefaultAsync(c => c.Id == id);
-            var clientResponse = mapper.Map<Client, ClientResponse>(response);
+            var clientResponse = _mapper.Map<Client, ClientResponse>(response);
             return clientResponse;
         }
 

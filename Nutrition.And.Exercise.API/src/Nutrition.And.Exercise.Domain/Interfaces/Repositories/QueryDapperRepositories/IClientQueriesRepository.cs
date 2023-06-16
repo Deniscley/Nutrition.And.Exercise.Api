@@ -1,4 +1,5 @@
-﻿using Nutrition.And.Exercise.Domain.Entities;
+﻿using Nutrition.And.Exercise.Domain.Dtos.Response;
+using Nutrition.And.Exercise.Domain.Entities;
 
 namespace Nutrition.And.Exercise.Domain.Interfaces.Repositories.QueryDapperRepositories
 {
@@ -6,7 +7,7 @@ namespace Nutrition.And.Exercise.Domain.Interfaces.Repositories.QueryDapperRepos
     {
         Task InsertCustomer(Client client);
         //Task<IEnumerable<Client>> GetCustomersAsync();
-        Task<Client?> GetClientAsync(Guid id);
+        Task<ClientResponse> GetClientAsync(Guid id);
 
     }
 }

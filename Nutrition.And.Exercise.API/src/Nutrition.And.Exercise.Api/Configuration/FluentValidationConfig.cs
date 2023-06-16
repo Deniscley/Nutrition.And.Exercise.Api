@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Text.Json.Serialization;
 
@@ -19,7 +20,7 @@ namespace Nutrition.And.Exercise.Api.Configuration
                     p.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 });
 
-            //services.AddFluentValidationRulesToSwagger();
+            services.AddFluentValidationRulesToSwagger();
         }
     }
 }

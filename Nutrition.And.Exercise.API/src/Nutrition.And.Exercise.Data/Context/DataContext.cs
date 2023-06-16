@@ -14,6 +14,10 @@ namespace Nutrition.And.Exercise.Data.Context
 
         public DbSet<Client> Customers { get; set; }
 
+        public DataContext(DbContextOptions options) : base(options)
+        {
+        }
+
         public DataContext(DbContextOptions options, IMediatorHandler mediatorHandler) : base(options)
         {
             _mediatorHandler = mediatorHandler;
