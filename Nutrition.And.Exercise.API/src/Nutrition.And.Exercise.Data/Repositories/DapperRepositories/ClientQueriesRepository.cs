@@ -1,12 +1,12 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
-using Nutrition.And.Exercise.Domain.Dtos.Response;
+using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Domain.Entities;
-using Nutrition.And.Exercise.Domain.Interfaces.Repositories.QueryDapperRepositories;
+using Nutrition.And.Exercise.Domain.Interfaces.Repositories.DapperRepositories;
 using System.Data;
 
-namespace Nutrition.And.Exercise.Data.Repositories.QueryRepositories
+namespace Nutrition.And.Exercise.Data.Repositories.DapperRepositories
 {
     public class ClientQueriesRepository : IClientQueriesRepository
     {

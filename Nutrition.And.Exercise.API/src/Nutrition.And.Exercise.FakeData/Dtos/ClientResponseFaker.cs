@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using Nutrition.And.Exercise.Domain.Dtos.Response;
+using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 
 namespace Nutrition.And.Exercise.FakeData.Dtos
 {
