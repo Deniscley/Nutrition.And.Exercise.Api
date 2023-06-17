@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using Nutrition.And.Exercise.Api.Controllers;
 using Nutrition.And.Exercise.Core.Mediator;
-using Nutrition.And.Exercise.Domain.Dtos.Response;
+using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
-using Nutrition.And.Exercise.Domain.Interfaces.Repositories.QueryDapperRepositories;
+using Nutrition.And.Exercise.Domain.Interfaces.Repositories.DapperRepositories;
 using Nutrition.And.Exercise.FakeData.Dtos;
 using Xunit;
 

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Nutrition.And.Exercise.Domain.Dtos.Response;
+using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Domain.Entities;
 
 namespace Nutrition.And.Exercise.Data.MappingsProfile

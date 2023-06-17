@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Nutrition.And.Exercise.Domain.Dtos.Response
+namespace Nutrition.And.Exercise.Domain.DTOs.ResponseDtos
 {
     /// <summary>
     /// Object used to insert new customers.

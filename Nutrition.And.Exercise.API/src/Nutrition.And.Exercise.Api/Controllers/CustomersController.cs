@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nutrition.And.Exercise.Application.Commands;
-using Nutrition.And.Exercise.Domain.Dtos.Response;
+using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
-using Nutrition.And.Exercise.Domain.Interfaces.Repositories.QueryDapperRepositories;
+using Nutrition.And.Exercise.Domain.Interfaces.Repositories.DapperRepositories;
 using Nutrition.And.Exercise.Core.Mediator;
 //using SerilogTimings;
 
