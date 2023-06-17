@@ -7,7 +7,7 @@ using Nutrition.And.Exercise.Core.Mediator;
 using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.DapperRepositories;
-using Nutrition.And.Exercise.FakeData.Dtos;
+using Nutrition.And.Exercise.FakeData.DTOs;
 using Xunit;
 
 namespace Nutrition.And.Exercise.Tests.Controllers

@@ -8,7 +8,7 @@ using Nutrition.And.Exercise.Data.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Domain.Entities;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
-using Nutrition.And.Exercise.FakeData.Dtos;
+using Nutrition.And.Exercise.FakeData.DTOs;
 using Nutrition.And.Exercise.FakeData.Entities;
 using Xunit;
 
