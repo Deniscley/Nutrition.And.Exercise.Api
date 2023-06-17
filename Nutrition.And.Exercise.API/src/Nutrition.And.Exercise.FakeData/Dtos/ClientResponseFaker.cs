@@ -1,7 +1,7 @@
 ﻿using Bogus;
 using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 
-namespace Nutrition.And.Exercise.FakeData.Dtos
+namespace Nutrition.And.Exercise.FakeData.DTOs
 {
     public class ClientResponseFaker : Faker<ClientResponse>
     {
