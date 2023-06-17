@@ -1,4 +1,4 @@
-﻿namespace Nutrition.And.Exercise.Domain.Dtos.RequestDto
+﻿namespace Nutrition.And.Exercise.Domain.DTOs.RequestDtos
 {
     /// <summary>
     /// Object used to insert new customers.

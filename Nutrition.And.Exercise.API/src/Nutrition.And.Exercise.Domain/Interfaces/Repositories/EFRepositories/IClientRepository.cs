@@ -1,4 +1,4 @@
-﻿using Nutrition.And.Exercise.Domain.Dtos.Response;
+﻿using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Domain.Entities;
 using Nutrition.And.Exercise.Core.Data;
 
