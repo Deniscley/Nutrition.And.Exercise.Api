@@ -10,7 +10,7 @@ namespace Nutrition.And.Exercise.Data.Repositories.DapperRepositories
 {
     public class ClientQueriesRepository : IClientQueriesRepository
     {
-        private string ConnectionString;
+        private string? ConnectionString;
 
         public ClientQueriesRepository(IConfiguration configuration)
         {

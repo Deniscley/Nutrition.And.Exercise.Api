@@ -2,10 +2,10 @@
 {
     public class ErrorResponse
     {
-        public string Id { get; set; }
-        public string RequestId { get; set; }
-        public DateTime Data { get; set; }
-        public string Mensagem { get; set; }
+        public string Id { get; private set; }
+        public string RequestId { get; private set; }
+        public DateTime Data { get; private set; }
+        public string Mensagem { get; private set; }
 
         public ErrorResponse(string id, string requestId)
         {
