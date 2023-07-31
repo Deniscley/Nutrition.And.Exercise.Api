@@ -2,9 +2,9 @@
 using Nutrition.And.Exercise.Domain.Entities;
 using Nutrition.And.Exercise.Core.Data;
 using Nutrition.And.Exercise.Core.DomainObjects;
-using Nutrition.And.Exercise.Core.Mediator;
 using Nutrition.And.Exercise.Core.Messages;
 using System.ComponentModel.DataAnnotations;
+using Nutrition.And.Exercise.Core.Communication.Mediator;
 
 namespace Nutrition.And.Exercise.Data.Context
 {

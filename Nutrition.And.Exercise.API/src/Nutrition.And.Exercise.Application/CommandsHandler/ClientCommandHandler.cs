@@ -1,10 +1,10 @@
 ﻿using FluentValidation.Results;
 using MediatR;
 using Nutrition.And.Exercise.Application.Commands;
-using Nutrition.And.Exercise.Application.Events;
 using Nutrition.And.Exercise.Domain.Entities;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Core.Messages;
+using Nutrition.And.Exercise.Application.Events;
 
 namespace Nutrition.And.Exercise.Application.CommandsHandler
 {

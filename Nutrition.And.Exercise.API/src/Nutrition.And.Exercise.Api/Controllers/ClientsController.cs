@@ -3,29 +3,33 @@ using Nutrition.And.Exercise.Application.Commands;
 using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.DapperRepositories;
-using Nutrition.And.Exercise.Core.Mediator;
+using Nutrition.And.Exercise.Core.Communication.Mediator;
+using Nutrition.And.Exercise.Domain.Interfaces.Queries;
 //using SerilogTimings;
 
 namespace Nutrition.And.Exercise.Api.Controllers
 {
     [Route("api/customers")]
     [ApiController]
-    public class CustomersController : MainController
+    public class ClientsController : MainController
     {
         private readonly IClientRepository _clientRepository;
         private readonly IClientQueriesRepository _clientQueriesRepository;
         private readonly IMediatorHandler _mediatorHandler;
+        private readonly IClientQueries _clientQueries;
         //private readonly ILogger<CustomersController> _logger;
 
-        public CustomersController(IClientRepository clientRepository,
+        public ClientsController(IClientRepository clientRepository,
             IClientQueriesRepository clientQueriesRepository,
-            IMediatorHandler mediatorHandler
+            IMediatorHandler mediatorHandler,
+            IClientQueries clientQueries
             //ILogger<CustomersController> logger
             )
         {
             _clientRepository = clientRepository;
             _clientQueriesRepository = clientQueriesRepository;
             _mediatorHandler = mediatorHandler;
+            _clientQueries = clientQueries;
             //_logger = logger;
         }
 
@@ -41,7 +45,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
             //using (Operation.Time("Tempo para busca dos cliente."))
             //{
             //    _logger.LogInformation("Foi requisitado a busca dos clientes.");
-                var response = await _clientRepository.GetCustomersAsync();
+                var response = await _clientQueries.GetCustomers();
 
                 if (response.Any())
                 {
@@ -63,7 +67,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get(Guid id)
         {
-            return Ok(await _clientQueriesRepository.GetClientAsync(id));
+            return Ok(await _clientQueries.GetClient(id));
         }
 
         /// <summary>

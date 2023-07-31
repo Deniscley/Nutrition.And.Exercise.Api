@@ -1,6 +1,7 @@
 ﻿using MediatR;
+using Nutrition.And.Exercise.Application.Events;
 
-namespace Nutrition.And.Exercise.Application.Events
+namespace Nutrition.And.Exercise.Application.EventsHandlers
 {
     public class ClientEventHandler : INotificationHandler<RegisteredCustomerEvent>
     {
