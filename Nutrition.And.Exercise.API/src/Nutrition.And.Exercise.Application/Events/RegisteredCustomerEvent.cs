@@ -1,17 +1,15 @@
-﻿using Nutrition.And.Exercise.Core.Messages;
+﻿using Nutrition.And.Exercise.Core.DomainObjects;
+using Nutrition.And.Exercise.Core.Messages;
 
 namespace Nutrition.And.Exercise.Application.Events
 {
-    public class RegisteredCustomerEvent : Event
+    public class RegisteredCustomerEvent : DomainEvent
     {
-        public Guid Id { get; set; }
         public string Nome { get; set; }
         public DateTime DataNascimento { get; set; }
 
-        public RegisteredCustomerEvent(Guid id, string nome, DateTime dataNascimento)
+        public RegisteredCustomerEvent(Guid aggregateId, string nome, DateTime dataNascimento) : base(aggregateId)
         {
-            AggregateId = id;
-            Id = id;
             Nome = nome;
             DataNascimento = dataNascimento;
         }

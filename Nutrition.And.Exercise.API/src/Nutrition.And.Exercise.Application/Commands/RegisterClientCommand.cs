@@ -8,9 +8,9 @@ namespace Nutrition.And.Exercise.Application.Commands
     /// </summary>
     public class RegisterClientCommand : Command
     {
-        public Guid Id { get; set; }
-        public string Nome { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public Guid Id { get; private set; }
+        public string Nome { get; private set; }
+        public DateTime DataNascimento { get; private set; }
 
         public RegisterClientCommand(Guid id, string nome, DateTime dataNascimento)
         {
