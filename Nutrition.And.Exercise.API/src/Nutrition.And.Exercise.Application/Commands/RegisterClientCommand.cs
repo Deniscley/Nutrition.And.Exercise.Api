@@ -14,7 +14,6 @@ namespace Nutrition.And.Exercise.Application.Commands
 
         public RegisterClientCommand(Guid id, string nome, DateTime dataNascimento)
         {
-            AggregateId = id;
             Id = id;
             Nome = nome;
             DataNascimento = dataNascimento;

@@ -4,11 +4,13 @@ using Nutrition.And.Exercise.Application.CommandsHandler;
 using Nutrition.And.Exercise.Application.Events;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.DapperRepositories;
-using Nutrition.And.Exercise.Core.Mediator;
 using Nutrition.And.Exercise.Data.Context;
 using Nutrition.And.Exercise.Data.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Data.Repositories.DapperRepositories;
 using ValidationResult = FluentValidation.Results.ValidationResult;
+using Nutrition.And.Exercise.Core.Communication.Mediator;
+using Nutrition.And.Exercise.Core.Messages.CommonMessages.Notifications;
+using Nutrition.And.Exercise.Application.EventsHandlers;
 
 namespace Nutrition.And.Exercise.Api.Configuration
 {
@@ -16,20 +18,24 @@ namespace Nutrition.And.Exercise.Api.Configuration
     {
         public static void AddDependencyInjectionConfiguration(this IServiceCollection services)
         {
-            //// Repository
+            // Mediator
+
+            // Notifications
+            services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
+            // Repository
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<IClientQueriesRepository, ClientQueriesRepository>();
 
-            //// MediatorHandler
+            // MediatorHandler
             services.AddScoped<IMediatorHandler, MediatorHandler>();
 
-            //// CommandHandler
+            // CommandHandler
             services.AddScoped<IRequestHandler<RegisterClientCommand, ValidationResult>, ClientCommandHandler>();
 
-            //// Event
+            // Event
             services.AddScoped<INotificationHandler<RegisteredCustomerEvent>, ClientEventHandler>();
 
-            //// Context
+            // Context
             services.AddScoped<DataContext>();
         }
     }
