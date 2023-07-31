@@ -8,8 +8,8 @@ namespace Nutrition.And.Exercise.Domain.Entities
     {
         [Required]
         public Guid Id { get; set; }
-        public string Nome { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public string Nome { get; private set; }
+        public DateTime DataNascimento { get; private set; }
 
         public Client()
         {

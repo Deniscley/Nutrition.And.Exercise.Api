@@ -12,17 +12,17 @@ namespace Nutrition.And.Exercise.Domain.DTOs.ResponseDtos
         /// </summary>
         /// <example>123</example>
         [Required]
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
         /// <summary>
         /// Client name.
         /// </summary>
         /// <example>João</example>
-        public string Nome { get; set; }
+        public string Nome { get; private set; }
         /// <summary>
         /// date of birth
         /// </summary>
         /// <example>1980-01-01</example>
-        public DateTime DataNascimento { get; set; }
+        public DateTime DataNascimento { get; private set; }
 
         public object Clone()
         {
