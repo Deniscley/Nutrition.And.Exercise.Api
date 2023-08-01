@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrition.And.Exercise.Core.DomainObjects.DomainException
+namespace Nutrition.And.Exercise.Core.DomainObjects
 {
     public class DomainException : Exception
     {

@@ -21,11 +21,18 @@ namespace Nutrition.And.Exercise.Domain.Entities
             Id = id;
             Nome = nome;
             DataNascimento = dataNascimento;
+
+            Validate();
         }
 
         public void InsertId( Guid id )
         {
             Id = id;
+        }
+
+        public void Validate()
+        {
+            Validations.ValidateIfEmpty(Nome, "O campo Nome do cliente não pode estar vazio");
         }
     }
 }
