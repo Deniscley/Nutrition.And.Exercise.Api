@@ -20,7 +20,7 @@ namespace Nutrition.And.Exercise.Tests.CommandsHandler
         }
 
         //[Fact]
-        //public async Task InsertCustomer_Sucess()
+        //public async Task Client_InsertCustomer_Sucess()
         //{
         //    var message = registerClientCommand;
         //    var client = new Client(message.Id, message.Nome, message.DataNascimento);

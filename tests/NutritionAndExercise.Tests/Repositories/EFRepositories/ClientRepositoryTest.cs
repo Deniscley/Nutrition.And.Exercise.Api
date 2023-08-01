@@ -41,47 +41,68 @@ namespace Nutrition.And.Exercise.Tests.Repositories.EFRepositories
         private async Task<List<Client>> InsertRecords()
         {
             var customers = _clientFaker.Generate(100);
+
             foreach (var client in customers)
             {
                 client.InsertId(Guid.NewGuid());
                 await _context.Customers.AddAsync(client);
             }
+
             await _context.SaveChangesAsync();
+
             return customers;
         }
 
-        [Fact]
-        public async Task GetCustomersAsync_WithReturn()
+        [Fact(DisplayName = "Clientes com retorno")]
+        [Trait("Categoria", "ClientRepository Trait Testes")]
+        public async Task Client_GetCustomersAsync_WithReturn()
         {
+            //Arranje
             var records = await InsertRecords();
+
+            //Act
             var result = await _repository.GetCustomersAsync();
             var control = _mapper.Map<List<Client>, IEnumerable<ClientResponse>>(records);
 
+            //Assert
             var total = control.Count();
             result.Should().HaveCount(total);
         }
 
-        [Fact]
-        public async Task GetCustomersAsync_Empty()
+        [Fact(DisplayName = "Clientes vazio")]
+        [Trait("Categoria", "ClientRepository Trait Testes")]
+        public async Task Client_GetCustomersAsync_Empty()
         {
+            //Act
             var result = await _repository.GetCustomersAsync();
+
+            // Assert
             result.Should().HaveCount(0);
         }
 
-        [Fact]
-        public async Task GetClientAsync_Found()
+        [Fact(DisplayName = "Clientes encontrados")]
+        [Trait("Categoria", "ClientRepository Trait Testes")]
+        public async Task Client_GetClientAsync_Found()
         {
+            //Arranje
             var records = await InsertRecords();
+
+            //Act
             var result = await _repository.GetClientAsync(records.First().Id);
             var control = _mapper.Map<List<Client>, List<ClientResponse>>(records);
 
+            //Assert
             result.Should().BeEquivalentTo(control.First());
         }
 
-        [Fact]
-        public async Task GetClientAsync_NotFound()
+        [Fact(DisplayName = "Clientes não encontrados")]
+        [Trait("Categoria", "ClientRepository Trait Testes")]
+        public async Task Client_GetClientAsync_NotFound()
         {
+            //Act
             var result = await _repository.GetClientAsync(Guid.NewGuid());
+
+            // Assert
             result.Should().BeNull();
         }
 
