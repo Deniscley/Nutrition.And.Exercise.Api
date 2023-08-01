@@ -38,8 +38,9 @@ namespace Nutrition.And.Exercise.Tests.Controllers
             _clientsResponse = new ClientResponseFaker().Generate(10);
         }
 
-        [Fact]
-        public async Task Get_Ok()
+        [Fact(DisplayName = "Retorno clientes com sucesso")]
+        [Trait("Categoria", "Cliente Controller Trait Testes")]
+        public async Task Client_Get_Ok()
         {
             //Arranje
             var control = new List<ClientResponse>();
@@ -54,23 +55,31 @@ namespace Nutrition.And.Exercise.Tests.Controllers
             result.StatusCode.Should().Be(StatusCodes.Status200OK);
         }
 
-        [Fact]
-        public async Task Get_NotFound()
+        [Fact(DisplayName = "Clientes não encontrados")]
+        [Trait("Categoria", "Cliente Controller Trait Testes")]
+        public async Task Client_Get_NotFound()
         {
+            //Arranje
             _clientQueries.GetCustomers().Returns(new List<ClientResponse>());
 
+            //Act
             var result = (StatusCodeResult)await _controller.Get();
 
+            //Assert
             result.StatusCode.Should().Be(StatusCodes.Status404NotFound);
         }
 
-        [Fact]
-        public async Task GetById_Ok()
+        [Fact(DisplayName = "Clientes por id encontrados com sucesso")]
+        [Trait("Categoria", "Cliente Controller Trait Testes")]
+        public async Task Client_GetById_Ok()
         {
+            //Arranje
             _clientQueries.GetClient(Arg.Any<Guid>()).Returns(_clientResponse.TypedClone());
 
+            //Act
             var result = (ObjectResult)await _controller.Get(_clientResponse.Id);
 
+            //Assert
             result.Value.Should().BeEquivalentTo(_clientResponse);
             result.StatusCode.Should().Be(StatusCodes.Status200OK);
         }
