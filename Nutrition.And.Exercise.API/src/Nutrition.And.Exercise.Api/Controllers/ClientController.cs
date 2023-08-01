@@ -9,13 +9,13 @@ namespace Nutrition.And.Exercise.Api.Controllers
 {
     [Route("api/customers")]
     [ApiController]
-    public class ClientsController : MainController
+    public class ClientController : MainController
     {
         private readonly IMediatorHandler _mediatorHandler;
         private readonly IClientQueries _clientQueries;
         //private readonly ILogger<CustomersController> _logger;
 
-        public ClientsController(
+        public ClientController(
             IMediatorHandler mediatorHandler,
             IClientQueries clientQueries
             //ILogger<CustomersController> logger
