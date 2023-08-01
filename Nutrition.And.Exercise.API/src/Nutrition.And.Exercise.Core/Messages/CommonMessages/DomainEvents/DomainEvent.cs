@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrition.And.Exercise.Core.DomainObjects
+namespace Nutrition.And.Exercise.Core.Messages.CommonMessages.DomainEvents
 {
     public class DomainEvent : Event
     {

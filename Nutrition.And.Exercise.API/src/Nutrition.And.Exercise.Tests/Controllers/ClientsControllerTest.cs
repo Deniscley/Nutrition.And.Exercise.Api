@@ -3,31 +3,37 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using Nutrition.And.Exercise.Api.Controllers;
-using Nutrition.And.Exercise.Core.Mediator;
 using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.DapperRepositories;
 using Nutrition.And.Exercise.FakeData.DTOs;
 using Xunit;
+using Nutrition.And.Exercise.Core.Communication.Mediator;
+using Nutrition.And.Exercise.Domain.Interfaces.Queries;
+using Nutrition.And.Exercise.Application.Queries;
 
 namespace Nutrition.And.Exercise.Tests.Controllers
 {
-    public class CustomersControllerTest
+    public class ClientsControllerTest
     {
         private readonly IClientRepository _clientRepository;
         private readonly IClientQueriesRepository _clientQueriesRepository;
         private readonly IMediatorHandler _mediatorHandler;
-        private readonly CustomersController _controller;
+        private readonly IClientQueries _clientQueries;
+        private readonly ClientsController _controller;
         private readonly ClientResponse _clientResponse;
         private readonly List<ClientResponse> _clientsResponse;
 
-        public CustomersControllerTest()
+        public ClientsControllerTest()
         {
             _clientRepository = Substitute.For<IClientRepository>();
             _clientQueriesRepository = Substitute.For<IClientQueriesRepository>();
             _mediatorHandler = Substitute.For<IMediatorHandler>();
-            _controller = new CustomersController(_clientRepository,
-                _clientQueriesRepository, _mediatorHandler);
+            _clientQueries = Substitute.For<ClientQueries>();
+            _controller = new ClientsController(_clientRepository,
+                _clientQueriesRepository,
+                _mediatorHandler,
+                _clientQueries);
 
             _clientResponse = new ClientResponseFaker().Generate();
             _clientsResponse = new ClientResponseFaker().Generate(10);
@@ -40,7 +46,7 @@ namespace Nutrition.And.Exercise.Tests.Controllers
             //Arranje
             var control = new List<ClientResponse>();
             _clientsResponse.ForEach(c => control.Add(c.TypedClone()));
-            _clientRepository.GetCustomersAsync().Returns(_clientsResponse);
+            _clientQueries.GetCustomers().Returns(_clientsResponse);
 
             //Act
             var result = (ObjectResult)await _controller.Get();
@@ -54,7 +60,7 @@ namespace Nutrition.And.Exercise.Tests.Controllers
         [Fact]
         public async Task Get_NotFound()
         {
-            _clientRepository.GetCustomersAsync().Returns(new List<ClientResponse>());
+            _clientQueries.GetCustomers().Returns(new List<ClientResponse>());
 
             var result = (StatusCodeResult)await _controller.Get();
 
@@ -65,7 +71,7 @@ namespace Nutrition.And.Exercise.Tests.Controllers
         [Fact]
         public async Task GetById_Ok()
         {
-            _clientQueriesRepository.GetClientAsync(Arg.Any<Guid>()).Returns(_clientResponse.TypedClone());
+            _clientQueries.GetClient(Arg.Any<Guid>()).Returns(_clientResponse.TypedClone());
 
             var result = (ObjectResult)await _controller.Get(_clientResponse.Id);
 

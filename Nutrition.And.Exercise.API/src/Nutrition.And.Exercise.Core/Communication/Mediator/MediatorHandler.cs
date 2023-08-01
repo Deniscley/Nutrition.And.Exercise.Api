@@ -1,8 +1,9 @@
 ﻿using FluentValidation.Results;
 using MediatR;
 using Nutrition.And.Exercise.Core.Messages;
+using Nutrition.And.Exercise.Core.Messages.CommonMessages.Notifications;
 
-namespace Nutrition.And.Exercise.Core.Mediator
+namespace Nutrition.And.Exercise.Core.Communication.Mediator
 {
     public class MediatorHandler : IMediatorHandler
     {
@@ -16,6 +17,11 @@ namespace Nutrition.And.Exercise.Core.Mediator
         public async Task PublishEvent<T>(T eventt) where T : Event
         {
             await _mediator.Publish(eventt);
+        }
+
+        public async Task PublishNotification<T>(T notification) where T : DomainNotification
+        {
+            await _mediator.Publish(notification);
         }
 
         public async Task<ValidationResult> SendCommand<T>(T command) where T : Command
