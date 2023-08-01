@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nutrition.And.Exercise.Application.Commands;
-using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Core.Communication.Mediator;
 using Nutrition.And.Exercise.Domain.Interfaces.Queries;
 using Microsoft.AspNetCore.Authorization;
@@ -67,7 +66,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// <returns>Customer records command</returns>
         [HttpGet("inserir-clientes")]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Post()
         {
             var result = await _mediatorHandler
                 .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Sasuke", DateTime.Now));
@@ -75,7 +74,11 @@ namespace Nutrition.And.Exercise.Api.Controllers
             return CustomResponse(result);
         }
 
-        [HttpPost("inserir-clientes")]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        [HttpPost("")]
         public void Post([FromBody] string value)
         {
         }
