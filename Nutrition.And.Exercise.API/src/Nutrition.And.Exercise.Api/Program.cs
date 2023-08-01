@@ -13,6 +13,12 @@ try
         .AddJsonFile($"appsettings.{environment}.json", optional: true)
         .Build();
 
+    var builderSecrets = new ConfigurationBuilder()
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", true, true)
+        .AddJsonFile($"appsettings.{environment}.json", optional: true, true)
+        .AddEnvironmentVariables();
+
     var logger = new LoggerConfiguration()
         .ReadFrom.Configuration(configuration)
         .CreateLogger();
@@ -20,6 +26,11 @@ try
     logger.Information("Starting the Log!");
 
     builder.Host.UseSerilog(logger);
+
+    if (environment == "Development")
+    {
+        builderSecrets.AddUserSecrets<Startup>();
+    }
 }
 catch (Exception ex)
 {
