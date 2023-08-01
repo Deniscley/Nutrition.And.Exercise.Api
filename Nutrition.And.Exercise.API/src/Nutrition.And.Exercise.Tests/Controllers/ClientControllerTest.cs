@@ -14,23 +14,23 @@ using Nutrition.And.Exercise.Application.Queries;
 
 namespace Nutrition.And.Exercise.Tests.Controllers
 {
-    public class ClientsControllerTest
+    public class ClientControllerTest
     {
         private readonly IClientRepository _clientRepository;
         private readonly IClientQueriesRepository _clientQueriesRepository;
         private readonly IMediatorHandler _mediatorHandler;
         private readonly IClientQueries _clientQueries;
-        private readonly ClientsController _controller;
+        private readonly ClientController _controller;
         private readonly ClientResponse _clientResponse;
         private readonly List<ClientResponse> _clientsResponse;
 
-        public ClientsControllerTest()
+        public ClientControllerTest()
         {
             _clientRepository = Substitute.For<IClientRepository>();
             _clientQueriesRepository = Substitute.For<IClientQueriesRepository>();
             _mediatorHandler = Substitute.For<IMediatorHandler>();
             _clientQueries = Substitute.For<IClientQueries>();
-            _controller = new ClientsController(
+            _controller = new ClientController(
                 _mediatorHandler,
                 _clientQueries);
 
