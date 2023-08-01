@@ -7,7 +7,7 @@ using Nutrition.And.Exercise.Domain.Interfaces.Queries;
 
 namespace Nutrition.And.Exercise.Api.Controllers
 {
-    [Route("api/customers")]
+    [Route("api/client")]
     [ApiController]
     public class ClientController : MainController
     {
@@ -21,8 +21,6 @@ namespace Nutrition.And.Exercise.Api.Controllers
             //ILogger<CustomersController> logger
             )
         {
-            //_clientRepository = clientRepository;
-            //_clientQueriesRepository = clientQueriesRepository;
             _mediatorHandler = mediatorHandler;
             _clientQueries = clientQueries;
             //_logger = logger;
@@ -32,9 +30,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// Client list.
         /// </summary>
         /// <returns>Get client list.</returns>
-        [HttpGet]
-        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        [HttpGet("obter-todos")]
         public async Task<IActionResult> Get()
         {   
             //using (Operation.Time("Tempo para busca dos cliente."))
@@ -56,10 +52,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// </summary>
         /// <param name="id" example="123">Id of Client</param>
         /// <returns>Get client by id</returns>
-        [HttpGet("{id}")]
-        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        [HttpGet("obter-por-id/{id:Guid}")]
         public async Task<IActionResult> Get(Guid id)
         {
             return Ok(await _clientQueries.GetClient(id));
@@ -70,9 +63,8 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns>Customer records command</returns>
-        [HttpGet("clients")]
-        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        [HttpGet("inserir-clientes")]
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
         public async Task<IActionResult> Index()
         {
             var result = await _mediatorHandler
@@ -82,18 +74,13 @@ namespace Nutrition.And.Exercise.Api.Controllers
         }
 
         // POST api/<CustomersController>
-        [HttpPost]
-        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status201Created)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        [HttpPost("inserir-clientes")]
         public void Post([FromBody] string value)
         {
         }
 
         // PUT api/<CustomersController>/5
-        [HttpPut("{id}")]
-        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        [HttpPut("atualizar-clientes/{id:Guid}")]
         public void Put(int id, [FromBody] string value)
         {
         }
@@ -103,10 +90,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// </summary>
         /// <param name="id" example="123">Id of Client</param>
         /// <remarks>When deleting the client, it will be permanently removed from the base.</remarks>
-        [HttpDelete("{id}")]
-        [ProducesResponseType(typeof(ClientResponse), StatusCodes.Status204NoContent)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        [HttpDelete("deletar-por-id/{id:Guid}")]
         public void Delete(int id)
         {
         }

@@ -1,5 +1,7 @@
-﻿using Nutrition.And.Exercise.Api.Configuration;
+﻿using Microsoft.AspNetCore.Mvc;
+using Nutrition.And.Exercise.Api.Configuration;
 
+[assembly: ApiConventionType(typeof(DefaultApiConventions))]
 namespace Nutrition.And.Exercise.Api
 {
     public class Startup : IStartup
