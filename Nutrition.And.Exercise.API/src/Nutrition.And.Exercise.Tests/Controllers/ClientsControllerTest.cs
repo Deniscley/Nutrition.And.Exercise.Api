@@ -29,15 +29,13 @@ namespace Nutrition.And.Exercise.Tests.Controllers
             _clientRepository = Substitute.For<IClientRepository>();
             _clientQueriesRepository = Substitute.For<IClientQueriesRepository>();
             _mediatorHandler = Substitute.For<IMediatorHandler>();
-            _clientQueries = Substitute.For<ClientQueries>();
-            _controller = new ClientsController(_clientRepository,
-                _clientQueriesRepository,
+            _clientQueries = Substitute.For<IClientQueries>();
+            _controller = new ClientsController(
                 _mediatorHandler,
                 _clientQueries);
 
             _clientResponse = new ClientResponseFaker().Generate();
             _clientsResponse = new ClientResponseFaker().Generate(10);
-            _clientResponse = new ClientResponseFaker().Generate();
         }
 
         [Fact]
@@ -52,7 +50,6 @@ namespace Nutrition.And.Exercise.Tests.Controllers
             var result = (ObjectResult)await _controller.Get();
 
             //Assert
-            await _clientRepository.Received().GetCustomersAsync();
             result.Value.Should().BeEquivalentTo(control);
             result.StatusCode.Should().Be(StatusCodes.Status200OK);
         }
@@ -64,7 +61,6 @@ namespace Nutrition.And.Exercise.Tests.Controllers
 
             var result = (StatusCodeResult)await _controller.Get();
 
-            await _clientRepository.Received().GetCustomersAsync();
             result.StatusCode.Should().Be(StatusCodes.Status404NotFound);
         }
 
@@ -75,7 +71,6 @@ namespace Nutrition.And.Exercise.Tests.Controllers
 
             var result = (ObjectResult)await _controller.Get(_clientResponse.Id);
 
-            await _clientQueriesRepository.Received().GetClientAsync(Arg.Any<Guid>());
             result.Value.Should().BeEquivalentTo(_clientResponse);
             result.StatusCode.Should().Be(StatusCodes.Status200OK);
         }
