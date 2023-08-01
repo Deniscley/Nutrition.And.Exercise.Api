@@ -43,7 +43,7 @@ namespace Nutrition.And.Exercise.Tests.Repositories.EFRepositories
             var customers = _clientFaker.Generate(100);
             foreach (var client in customers)
             {
-                client.Id = Guid.NewGuid();
+                client.InsertId(Guid.NewGuid());
                 await _context.Customers.AddAsync(client);
             }
             await _context.SaveChangesAsync();

@@ -2,11 +2,6 @@
 using Nutrition.And.Exercise.Domain.Interfaces.Queries;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.DapperRepositories;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Nutrition.And.Exercise.Application.Queries
 {

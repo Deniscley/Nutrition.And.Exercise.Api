@@ -11,6 +11,8 @@ using ValidationResult = FluentValidation.Results.ValidationResult;
 using Nutrition.And.Exercise.Core.Communication.Mediator;
 using Nutrition.And.Exercise.Core.Messages.CommonMessages.Notifications;
 using Nutrition.And.Exercise.Application.EventsHandlers;
+using Nutrition.And.Exercise.Domain.Interfaces.Queries;
+using Nutrition.And.Exercise.Application.Queries;
 
 namespace Nutrition.And.Exercise.Api.Configuration
 {
@@ -31,6 +33,9 @@ namespace Nutrition.And.Exercise.Api.Configuration
 
             // CommandHandler
             services.AddScoped<IRequestHandler<RegisterClientCommand, ValidationResult>, ClientCommandHandler>();
+
+            // Queries
+            services.AddScoped<IClientQueries, ClientQueries>();
 
             // Event
             services.AddScoped<INotificationHandler<RegisteredCustomerEvent>, ClientEventHandler>();

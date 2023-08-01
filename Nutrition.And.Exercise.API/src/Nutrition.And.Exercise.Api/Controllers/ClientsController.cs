@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nutrition.And.Exercise.Application.Commands;
 using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
-using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
-using Nutrition.And.Exercise.Domain.Interfaces.Repositories.DapperRepositories;
 using Nutrition.And.Exercise.Core.Communication.Mediator;
 using Nutrition.And.Exercise.Domain.Interfaces.Queries;
 //using SerilogTimings;
@@ -13,21 +11,18 @@ namespace Nutrition.And.Exercise.Api.Controllers
     [ApiController]
     public class ClientsController : MainController
     {
-        private readonly IClientRepository _clientRepository;
-        private readonly IClientQueriesRepository _clientQueriesRepository;
         private readonly IMediatorHandler _mediatorHandler;
         private readonly IClientQueries _clientQueries;
         //private readonly ILogger<CustomersController> _logger;
 
-        public ClientsController(IClientRepository clientRepository,
-            IClientQueriesRepository clientQueriesRepository,
+        public ClientsController(
             IMediatorHandler mediatorHandler,
             IClientQueries clientQueries
             //ILogger<CustomersController> logger
             )
         {
-            _clientRepository = clientRepository;
-            _clientQueriesRepository = clientQueriesRepository;
+            //_clientRepository = clientRepository;
+            //_clientQueriesRepository = clientQueriesRepository;
             _mediatorHandler = mediatorHandler;
             _clientQueries = clientQueries;
             //_logger = logger;
