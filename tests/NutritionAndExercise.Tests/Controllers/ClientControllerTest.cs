@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
-using Nutrition.And.Exercise.Api.Controllers;
 using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.DapperRepositories;
@@ -11,6 +10,7 @@ using Xunit;
 using Nutrition.And.Exercise.Core.Communication.Mediator;
 using Nutrition.And.Exercise.Domain.Interfaces.Queries;
 using Nutrition.And.Exercise.Application.Queries;
+using Nutrition.And.Exercise.Api.Controllers;
 
 namespace Nutrition.And.Exercise.Tests.Controllers
 {
