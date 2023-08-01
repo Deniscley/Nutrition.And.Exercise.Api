@@ -3,10 +3,12 @@ using Nutrition.And.Exercise.Application.Commands;
 using Nutrition.And.Exercise.Domain.DTOs.ResponseDtos;
 using Nutrition.And.Exercise.Core.Communication.Mediator;
 using Nutrition.And.Exercise.Domain.Interfaces.Queries;
+using Microsoft.AspNetCore.Authorization;
 //using SerilogTimings;
 
 namespace Nutrition.And.Exercise.Api.Controllers
 {
+    [Authorize]
     [Route("api/client")]
     [ApiController]
     public class ClientController : MainController
@@ -52,7 +54,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// </summary>
         /// <param name="id" example="123">Id of Client</param>
         /// <returns>Get client by id</returns>
-        [HttpGet("obter-por-id/{id:Guid}")]
+        [HttpGet("obter-por-id/{id:guid}")]
         public async Task<IActionResult> Get(Guid id)
         {
             return Ok(await _clientQueries.GetClient(id));
@@ -73,14 +75,12 @@ namespace Nutrition.And.Exercise.Api.Controllers
             return CustomResponse(result);
         }
 
-        // POST api/<CustomersController>
         [HttpPost("inserir-clientes")]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<CustomersController>/5
-        [HttpPut("atualizar-clientes/{id:Guid}")]
+        [HttpPut("atualizar-clientes/{id:guid}")]
         public void Put(int id, [FromBody] string value)
         {
         }
@@ -90,7 +90,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// </summary>
         /// <param name="id" example="123">Id of Client</param>
         /// <remarks>When deleting the client, it will be permanently removed from the base.</remarks>
-        [HttpDelete("deletar-por-id/{id:Guid}")]
+        [HttpDelete("deletar-por-id/{id:guid}")]
         public void Delete(int id)
         {
         }
