@@ -20,20 +20,20 @@ namespace Nutrition.And.Exercise.Application.CommandsHandler
         {
             if (!message.EhValid()) return message.ValidationResult;
 
-            var client = new Client(message.Id, message.Nome, message.DataNascimento);
+            var client = new Client(message.Id, message.Nome, message.DataNascimento, message.Cpf);
 
             // Validações de negócio
-            var existingCustomer = await _clientRepository.GetClientAsync(message.Id);
+            var existingCustomer = await _clientRepository.GetByCpf(message.Cpf);
 
             if (existingCustomer != null)
             {
-                AddError("Este Cliente já existe.");
+                AddError("Este CPF já está em uso.");
                 return ValidationResult;
             }
 
             _clientRepository.InsertCustomer(client);
 
-            client.AddEvent(new RegisteredCustomerEvent(message.Id, message.Nome, message.DataNascimento));
+            client.AddEvent(new RegisteredCustomerEvent(message.Id, message.Nome, message.DataNascimento, message.Cpf));
 
             return await PersistData(_clientRepository.UnitOfWork);
         }

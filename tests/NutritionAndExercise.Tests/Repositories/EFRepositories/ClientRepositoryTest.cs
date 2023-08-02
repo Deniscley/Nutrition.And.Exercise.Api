@@ -82,13 +82,13 @@ namespace Nutrition.And.Exercise.Tests.Repositories.EFRepositories
 
         [Fact(DisplayName = "Clientes encontrados")]
         [Trait("Categoria", "ClientRepository Trait Testes")]
-        public async Task Client_GetClientAsync_Found()
+        public async Task Client_GetByCpf_Found()
         {
             //Arranje
             var records = await InsertRecords();
 
             //Act
-            var result = await _repository.GetClientAsync(records.First().Id);
+            var result = await _repository.GetByCpf(records.First().Cpf);
             var control = _mapper.Map<List<Client>, List<ClientResponse>>(records);
 
             //Assert
@@ -97,10 +97,10 @@ namespace Nutrition.And.Exercise.Tests.Repositories.EFRepositories
 
         [Fact(DisplayName = "Clientes não encontrados")]
         [Trait("Categoria", "ClientRepository Trait Testes")]
-        public async Task Client_GetClientAsync_NotFound()
+        public async Task Client_GetByCpf_NotFound()
         {
             //Act
-            var result = await _repository.GetClientAsync(Guid.NewGuid());
+            var result = await _repository.GetByCpf("23489647821");
 
             // Assert
             result.Should().BeNull();

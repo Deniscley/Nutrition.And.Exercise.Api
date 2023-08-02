@@ -11,12 +11,15 @@ namespace Nutrition.And.Exercise.Application.Commands
         public Guid Id { get; private set; }
         public string Nome { get; private set; }
         public DateTime DataNascimento { get; private set; }
+        public string Cpf { get; private set; }
 
-        public RegisterClientCommand(Guid id, string nome, DateTime dataNascimento)
+        public RegisterClientCommand(Guid id, string nome, DateTime dataNascimento, string cpf)
         {
             Id = id;
             Nome = nome;
             DataNascimento = dataNascimento;
+            Cpf = cpf;
+
         }
 
         public override bool EhValid()

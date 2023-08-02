@@ -11,6 +11,7 @@ using Nutrition.And.Exercise.Core.Communication.Mediator;
 using Nutrition.And.Exercise.Domain.Interfaces.Queries;
 using Nutrition.And.Exercise.Application.Queries;
 using Nutrition.And.Exercise.Api.Controllers;
+using Nutrition.And.Exercise.Application.Commands;
 
 namespace Nutrition.And.Exercise.Tests.Controllers
 {
@@ -84,17 +85,21 @@ namespace Nutrition.And.Exercise.Tests.Controllers
             result.StatusCode.Should().Be(StatusCodes.Status200OK);
         }
 
-        //[Fact]
-        //public async Task Index_Ok()
+        //[Fact(DisplayName = "Clientes com sucesso")]
+        //[Trait("Categoria", "Cliente Controller Trait Testes")]
+        //public async Task Client_Post_Ok()
         //{
+        //    //Arranje
         //    await _mediatorHandler
         //        .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Sasuke", DateTime.Now));
 
-        //    var result = (ObjectResult)await _controller.Index();
+        //    //Act
+        //    var result = (ObjectResult)await _controller.Post();
 
         //    await _mediatorHandler.Received()
         //        .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Sasuke", DateTime.Now));
 
+        //    //Assert
         //    Assert.Equal(StatusCodes.Status200OK, result.StatusCode);
         //}
     }

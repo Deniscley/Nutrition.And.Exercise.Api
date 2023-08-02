@@ -24,6 +24,8 @@ namespace Nutrition.And.Exercise.Domain.DTOs.ResponseDtos
         /// <example>1980-01-01</example>
         public DateTime DataNascimento { get; private set; }
 
+        public string Cpf { get; private set; }
+
         public object Clone()
         {
             var client = (ClientResponse)MemberwiseClone();
