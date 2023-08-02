@@ -97,7 +97,6 @@ namespace Nutrition.And.Exercise.Tests.Controllers
         //    var result = (ObjectResult)await _controller.Post();
 
         //    //Assert
-        //    Assert.Equal(StatusCodes.Status200OK, result.StatusCode);
         //}
     }
 }
