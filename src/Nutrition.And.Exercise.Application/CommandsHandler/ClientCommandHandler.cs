@@ -22,7 +22,6 @@ namespace Nutrition.And.Exercise.Application.CommandsHandler
 
             var client = new Client(message.Id, message.Nome, message.DataNascimento, message.Cpf);
 
-            // Validações de negócio
             var existingCustomer = await _clientRepository.GetByCpf(message.Cpf);
 
             if (existingCustomer != null)
@@ -33,7 +32,7 @@ namespace Nutrition.And.Exercise.Application.CommandsHandler
 
             _clientRepository.InsertCustomer(client);
 
-            client.AddEvent(new RegisteredCustomerEvent(message.Id, message.Nome, message.DataNascimento, message.Cpf));
+            //client.AddEvent(new RegisteredCustomerEvent(message.Id, message.Nome, message.DataNascimento, message.Cpf));
 
             return await PersistData(_clientRepository.UnitOfWork);
         }
