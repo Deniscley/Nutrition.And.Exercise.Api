@@ -70,7 +70,7 @@ namespace Nutrition.And.Exercise.Tests.Controllers
             result.StatusCode.Should().Be(StatusCodes.Status404NotFound);
         }
 
-        [Fact(DisplayName = "Clientes por id encontrados com sucesso")]
+        [Fact(DisplayName = "Cliente por id encontrados com sucesso")]
         [Trait("Categoria", "Cliente Controller Trait Testes")]
         public async Task Client_GetById_Ok()
         {
@@ -85,7 +85,7 @@ namespace Nutrition.And.Exercise.Tests.Controllers
             result.StatusCode.Should().Be(StatusCodes.Status200OK);
         }
 
-        //[Fact(DisplayName = "Clientes com sucesso")]
+        //[Fact(DisplayName = "Cliente inserido com sucesso")]
         //[Trait("Categoria", "Cliente Controller Trait Testes")]
         //public async Task Client_Post_Ok()
         //{
@@ -95,9 +95,6 @@ namespace Nutrition.And.Exercise.Tests.Controllers
 
         //    //Act
         //    var result = (ObjectResult)await _controller.Post();
-
-        //    await _mediatorHandler.Received()
-        //        .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Sasuke", DateTime.Now));
 
         //    //Assert
         //    Assert.Equal(StatusCodes.Status200OK, result.StatusCode);
