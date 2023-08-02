@@ -7,7 +7,7 @@ namespace Nutrition.And.Exercise.Application.Events
     {
         public string Nome { get; private set; }
         public DateTime DataNascimento { get; private set; }
-        public string Cpf;
+        public string Cpf { get; private set; }
 
         public RegisteredCustomerEvent(Guid aggregateId, string nome, DateTime dataNascimento, string cpf) : base(aggregateId)
         {
