@@ -5,9 +5,9 @@ namespace Nutrition.And.Exercise.Application.EventsHandlers
 {
     public class ClientEventHandler : INotificationHandler<RegisteredCustomerEvent>
     {
+        // Função para trabalhar com evento
         public Task Handle(RegisteredCustomerEvent notification, CancellationToken cancellationToken)
         {
-            // Enviar evento de confirmação
             return Task.CompletedTask;
         }
     }

@@ -9,10 +9,25 @@ namespace Nutrition.And.Exercise.Data.ConfigurationMappings
         /// EF Core - Fluent API
         public void Configure(EntityTypeBuilder<Client> builder)
         {
-            //builder.HasKey(x => x.Id);
-            //builder.ToTable("Client");
-            builder.Property(x => x.Nome).HasMaxLength(200).IsRequired();
-            builder.HasIndex(x => new { x.Nome });
+            builder.HasKey(x => x.Id);
+
+            builder.Property(x => x.Nome)
+                .HasMaxLength(200)
+                .IsRequired()
+                .HasColumnType("varchar(200)");
+
+            builder.Property(x => x.DataNascimento)
+                .IsRequired()
+                .HasColumnType("datetime");
+
+            builder.Property(x => x.Cpf)
+                .HasMaxLength(11)
+                .IsRequired()
+                .HasColumnType("varchar(11)");
+
+            //builder.HasIndex(x => new { x.Nome });
+
+            builder.ToTable("Customers");
         }
     }
 }

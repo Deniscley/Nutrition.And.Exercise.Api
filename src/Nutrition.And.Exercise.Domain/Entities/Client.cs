@@ -8,19 +8,21 @@ namespace Nutrition.And.Exercise.Domain.Entities
     public class Client : Entity, IAggregateRoot
     {
         [Required]
-        public Guid Id { get; private set; }
         public string Nome { get; private set; }
         public DateTime DataNascimento { get; private set; }
+
+        public string Cpf { get; private set; }
 
         public Client()
         {
         }
 
-        public Client( Guid id, string nome, DateTime dataNascimento)
+        public Client(Guid id, string nome, DateTime dataNascimento, string cpf)
         {
             Id = id;
             Nome = nome;
             DataNascimento = dataNascimento;
+            Cpf = cpf;
 
             Validate();
         }
@@ -33,6 +35,7 @@ namespace Nutrition.And.Exercise.Domain.Entities
         public void Validate()
         {
             Validations.ValidateIfEmpty(Nome, "O campo Nome do cliente não pode estar vazio");
+            Validations.ValidateIfEmpty(Cpf, "O campo Cpf do cliente não pode estar vazio");
         }
     }
 }
