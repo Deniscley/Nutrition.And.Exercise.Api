@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -15,8 +16,9 @@ namespace Nutrition.And.Exercise.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Nome = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
+                    DataNascimento = table.Column<DateTime>(type: "datetime", nullable: false),
+                    Cpf = table.Column<string>(type: "varchar(11)", maxLength: 11, nullable: false)
                 },
                 constraints: table =>
                 {

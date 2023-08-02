@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Nutrition.And.Exercise.Api.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/client")]
     [ApiController]
     public class ClientController : MainController
@@ -64,12 +64,12 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns>Customer records command</returns>
-        [HttpGet("inserir-clientes")]
+        [HttpPost("inserir-clientes")]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
         public async Task<IActionResult> Post()
         {
             var result = await _mediatorHandler
-                .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Sasuke", DateTime.Now));
+                .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Sakura", DateTime.Now, "12456789452"));
 
             return CustomResponse(result);
         }
@@ -78,10 +78,10 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// 
         /// </summary>
         /// <param name="value"></param>
-        [HttpPost("")]
-        public void Post([FromBody] string value)
-        {
-        }
+        //[HttpPost("")]
+        //public void Post([FromBody] string value)
+        //{
+        //}
 
         [HttpPut("atualizar-clientes/{id:guid}")]
         public void Put(int id, [FromBody] string value)

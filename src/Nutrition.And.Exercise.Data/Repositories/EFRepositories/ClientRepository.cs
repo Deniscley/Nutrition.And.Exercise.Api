@@ -28,9 +28,9 @@ namespace Nutrition.And.Exercise.Data.Repositories.EFRepositories
             return clientsResponse;
         }
 
-        public async Task<ClientResponse> GetClientAsync(Guid id)
+        public async Task<ClientResponse> GetByCpf(string cpf)
         {
-            var response = await _context.Customers.FirstOrDefaultAsync(c => c.Id == id);
+            var response = await _context.Customers.FirstOrDefaultAsync(c => c.Cpf == cpf);
             var clientResponse = _mapper.Map<Client, ClientResponse>(response);
             return clientResponse;
         }
