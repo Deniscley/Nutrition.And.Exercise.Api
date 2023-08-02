@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Mvc;
 using Nutrition.And.Exercise.Api.Configuration;
 
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
@@ -30,6 +32,13 @@ namespace Nutrition.And.Exercise.Api
             services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<Startup>());
 
             services.AddSwaggerConfiguration();
+
+            services.AddHealthChecks()
+                .AddSqlServer(Configuration.GetConnectionString("DefaultConnection"), 
+                    name: "SQL Server Check", tags: new string[] { "db", "data" });
+
+            services.AddHealthChecksUI()
+                .AddInMemoryStorage();
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment environment)
@@ -52,6 +61,17 @@ namespace Nutrition.And.Exercise.Api
             app.UseAuthorization();
 
             app.MapControllers();
+
+            app.UseHealthChecks("/health", new HealthCheckOptions()
+            {
+                Predicate = _ => true,
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+            });
+
+            app.UseHealthChecksUI(options =>
+            {
+                options.UIPath = "/dashboard";
+            });
         }
     }
 
