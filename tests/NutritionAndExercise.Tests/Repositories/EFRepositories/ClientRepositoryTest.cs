@@ -106,9 +106,11 @@ namespace Nutrition.And.Exercise.Tests.Repositories.EFRepositories
             result.Should().BeNull();
         }
 
-        //[Fact]
+        //[Fact(DisplayName = "Cliente inserido com sucesso")]
+        //[Trait("Categoria", "ClientRepository Trait Testes")]
         //public void InsertCustomer_Sucess()
         //{
+        //    Act
         //    var result = _repository.InsertCustomer(_client);
         //}
 

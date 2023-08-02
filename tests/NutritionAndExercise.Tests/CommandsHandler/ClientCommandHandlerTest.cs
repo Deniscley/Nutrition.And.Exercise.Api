@@ -28,13 +28,15 @@ namespace Nutrition.And.Exercise.Tests.CommandsHandler
             _registerClientCommand = _registerClientCommandFaker.Generate();
         }
 
-        //[Fact]
+        //[Fact(DisplayName = "Cliente inserido com sucesso")]
+        //[Trait("Categoria", "ClientCommandHandler Trait Testes")]
         //public async Task Client_InsertCustomer_Sucess()
         //{
-
+        //    //Arranje
         //    var message = _registerClientCommand;
         //    var client = new Client(message.Id, message.Nome, message.DataNascimento);
 
+        //    //Act
         //    _clientRepository.GetClientAsync(client.Id);
 
         //    _clientRepository.InsertCustomer(client);
