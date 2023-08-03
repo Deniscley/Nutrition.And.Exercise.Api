@@ -14,12 +14,12 @@ namespace Nutrition.And.Exercise.Api.Controllers
     {
         private readonly IMediatorHandler _mediatorHandler;
         private readonly IClientQueries _clientQueries;
-        //private readonly ILogger<CustomersController> _logger;
+        //private readonly ILogger<ClientController> _logger;
 
         public ClientController(
             IMediatorHandler mediatorHandler,
             IClientQueries clientQueries
-            //ILogger<CustomersController> logger
+            //ILogger<ClientController> logger
             )
         {
             _mediatorHandler = mediatorHandler;
@@ -37,7 +37,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
             //using (Operation.Time("Tempo para busca dos cliente."))
             //{
             //    _logger.LogInformation("Foi requisitado a busca dos clientes.");
-                var response = await _clientQueries.GetCustomers();
+                var response = await _clientQueries.GetClients();
 
                 if (response.Any())
                 {

@@ -25,9 +25,9 @@ namespace Nutrition.And.Exercise.Data.ConfigurationMappings
                 .IsRequired()
                 .HasColumnType("varchar(11)");
 
-            //builder.HasIndex(x => new { x.Nome });
+            builder.HasIndex(x => new { x.Nome });
 
-            builder.ToTable("Customers");
+            builder.ToTable("Clientes");
         }
     }
 }

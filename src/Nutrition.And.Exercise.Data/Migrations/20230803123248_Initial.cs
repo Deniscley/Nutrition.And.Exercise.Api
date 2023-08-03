@@ -12,7 +12,7 @@ namespace Nutrition.And.Exercise.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Customers",
+                name: "Clientes",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -22,15 +22,20 @@ namespace Nutrition.And.Exercise.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
+                    table.PrimaryKey("PK_Clientes", x => x.Id);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Clientes_Nome",
+                table: "Clientes",
+                column: "Nome");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "Clientes");
         }
     }
 }

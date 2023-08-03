@@ -6,7 +6,7 @@ namespace Nutrition.And.Exercise.Domain.Interfaces.Repositories.DapperRepositori
     public interface IClientQueriesRepository
     {
         Task InsertCustomer(Client client);
-        //Task<IEnumerable<Client>> GetCustomersAsync();
+        //Task<IEnumerable<Client>> GetClientsAsync();
         Task<ClientResponse> GetClientAsync(Guid id);
 
     }

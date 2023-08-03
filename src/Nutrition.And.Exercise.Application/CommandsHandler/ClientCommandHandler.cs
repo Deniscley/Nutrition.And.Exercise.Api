@@ -30,7 +30,7 @@ namespace Nutrition.And.Exercise.Application.CommandsHandler
                 return ValidationResult;
             }
 
-            _clientRepository.InsertCustomer(client);
+            _clientRepository.InsertClients(client);
 
             //client.AddEvent(new RegisteredCustomerEvent(message.Id, message.Nome, message.DataNascimento, message.Cpf));
 
