@@ -12,7 +12,7 @@ namespace Nutrition.And.Exercise.Data.Context
     {
         private readonly IMediatorHandler _mediatorHandler;
 
-        public DbSet<Client> Customers { get; set; }
+        public DbSet<Client> Clients { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {

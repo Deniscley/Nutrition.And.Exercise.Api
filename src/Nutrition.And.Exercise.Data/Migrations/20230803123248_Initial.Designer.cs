@@ -12,7 +12,7 @@ using Nutrition.And.Exercise.Data.Context;
 namespace Nutrition.And.Exercise.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230802151833_Initial")]
+    [Migration("20230803123248_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -46,7 +46,9 @@ namespace Nutrition.And.Exercise.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers", (string)null);
+                    b.HasIndex("Nome");
+
+                    b.ToTable("Clientes", (string)null);
                 });
 #pragma warning restore 612, 618
         }
