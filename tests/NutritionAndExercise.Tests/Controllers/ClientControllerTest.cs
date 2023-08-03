@@ -46,7 +46,7 @@ namespace Nutrition.And.Exercise.Tests.Controllers
             //Arranje
             var control = new List<ClientResponse>();
             _clientsResponse.ForEach(c => control.Add(c.TypedClone()));
-            _clientQueries.GetCustomers().Returns(_clientsResponse);
+            _clientQueries.GetClients().Returns(_clientsResponse);
 
             //Act
             var result = (ObjectResult)await _controller.Get();
@@ -61,7 +61,7 @@ namespace Nutrition.And.Exercise.Tests.Controllers
         public async Task Client_Get_NotFound()
         {
             //Arranje
-            _clientQueries.GetCustomers().Returns(new List<ClientResponse>());
+            _clientQueries.GetClients().Returns(new List<ClientResponse>());
 
             //Act
             var result = (StatusCodeResult)await _controller.Get();

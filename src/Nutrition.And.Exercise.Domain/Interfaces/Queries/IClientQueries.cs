@@ -9,7 +9,7 @@ namespace Nutrition.And.Exercise.Domain.Interfaces.Queries
 {
     public interface IClientQueries
     {
-        Task<IEnumerable<ClientResponse>> GetCustomers();
+        Task<IEnumerable<ClientResponse>> GetClients();
         Task<ClientResponse> GetClient(Guid id);
     }
 }

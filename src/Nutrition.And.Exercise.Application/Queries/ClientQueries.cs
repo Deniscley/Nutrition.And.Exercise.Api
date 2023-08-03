@@ -23,9 +23,9 @@ namespace Nutrition.And.Exercise.Application.Queries
             return response;
         }
 
-        public async Task<IEnumerable<ClientResponse>> GetCustomers()
+        public async Task<IEnumerable<ClientResponse>> GetClients()
         {
-            var response = await _clientRepository.GetCustomersAsync();
+            var response = await _clientRepository.GetClientsAsync();
 
             return response;
         }

@@ -40,28 +40,28 @@ namespace Nutrition.And.Exercise.Tests.Repositories.EFRepositories
 
         private async Task<List<Client>> InsertRecords()
         {
-            var customers = _clientFaker.Generate(100);
+            var clients = _clientFaker.Generate(100);
 
-            foreach (var client in customers)
+            foreach (var client in clients)
             {
                 client.InsertId(Guid.NewGuid());
-                await _context.Customers.AddAsync(client);
+                await _context.Clients.AddAsync(client);
             }
 
             await _context.SaveChangesAsync();
 
-            return customers;
+            return clients;
         }
 
         [Fact(DisplayName = "Clientes com retorno")]
         [Trait("Categoria", "ClientRepository Trait Testes")]
-        public async Task Client_GetCustomersAsync_WithReturn()
+        public async Task Client_GetClientsAsync_WithReturn()
         {
             //Arranje
             var records = await InsertRecords();
 
             //Act
-            var result = await _repository.GetCustomersAsync();
+            var result = await _repository.GetClientsAsync();
             var control = _mapper.Map<List<Client>, IEnumerable<ClientResponse>>(records);
 
             //Assert
@@ -71,10 +71,10 @@ namespace Nutrition.And.Exercise.Tests.Repositories.EFRepositories
 
         [Fact(DisplayName = "Clientes vazio")]
         [Trait("Categoria", "ClientRepository Trait Testes")]
-        public async Task Client_GetCustomersAsync_Empty()
+        public async Task Client_GetClientsAsync_Empty()
         {
             //Act
-            var result = await _repository.GetCustomersAsync();
+            var result = await _repository.GetClientsAsync();
 
             // Assert
             result.Should().HaveCount(0);

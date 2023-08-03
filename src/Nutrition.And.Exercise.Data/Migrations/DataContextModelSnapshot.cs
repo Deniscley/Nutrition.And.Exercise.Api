@@ -43,7 +43,9 @@ namespace Nutrition.And.Exercise.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers", (string)null);
+                    b.HasIndex("Nome");
+
+                    b.ToTable("Clientes", (string)null);
                 });
 #pragma warning restore 612, 618
         }

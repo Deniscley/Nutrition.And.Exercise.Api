@@ -21,23 +21,23 @@ namespace Nutrition.And.Exercise.Data.Repositories.EFRepositories
 
         public IUnitOfWork UnitOfWork => _context;
 
-        public async Task<IEnumerable<ClientResponse>> GetCustomersAsync()
+        public async Task<IEnumerable<ClientResponse>> GetClientsAsync()
         {
-            var response = await _context.Customers.AsNoTracking().ToListAsync();
+            var response = await _context.Clients.AsNoTracking().ToListAsync();
             var clientsResponse = _mapper.Map<List<Client>, IEnumerable<ClientResponse>>(response);
             return clientsResponse;
         }
 
         public async Task<ClientResponse> GetByCpf(string cpf)
         {
-            var response = await _context.Customers.FirstOrDefaultAsync(c => c.Cpf == cpf);
+            var response = await _context.Clients.FirstOrDefaultAsync(c => c.Cpf == cpf);
             var clientResponse = _mapper.Map<Client, ClientResponse>(response);
             return clientResponse;
         }
 
-        public void InsertCustomer(Client client)
+        public void InsertClients(Client client)
         {
-            _context.Customers.Add(client);
+            _context.Clients.Add(client);
         }
 
         public void Dispose()

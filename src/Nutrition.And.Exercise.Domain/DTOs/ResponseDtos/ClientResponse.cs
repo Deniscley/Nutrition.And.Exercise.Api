@@ -3,7 +3,7 @@
 namespace Nutrition.And.Exercise.Domain.DTOs.ResponseDtos
 {
     /// <summary>
-    /// Object used to insert new customers.
+    /// Object used to insert new client.
     /// </summary>
     public class ClientResponse : ICloneable
     {
