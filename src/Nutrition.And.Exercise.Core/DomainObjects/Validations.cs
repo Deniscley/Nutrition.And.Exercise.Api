@@ -35,7 +35,7 @@ namespace Nutrition.And.Exercise.Core.DomainObjects
             }
         }
 
-        // ValidarTamanho
+        // Validar Tamanho
         public static void ValidateSize(string valor, int maximo, string mensagem)
         {
             var length = valor.Trim().Length;
@@ -54,7 +54,7 @@ namespace Nutrition.And.Exercise.Core.DomainObjects
             }
         }
 
-        // ValidarSeVazio
+        // Validar Se Vazio
         public static void ValidateIfEmpty(string valor, string mensagem)
         {
             if (valor == null || valor.Trim().Length == 0)
@@ -111,7 +111,7 @@ namespace Nutrition.And.Exercise.Core.DomainObjects
             }
         }
 
-        // ValidarSeMenorQue
+        // Validar Se Menor Que
         public static void ValidateIfLessThan(long valor, long minimo, string mensagem)
         {
             if (valor < minimo)

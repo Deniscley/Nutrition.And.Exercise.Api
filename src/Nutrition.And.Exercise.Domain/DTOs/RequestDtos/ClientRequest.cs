@@ -1,7 +1,7 @@
 ﻿namespace Nutrition.And.Exercise.Domain.DTOs.RequestDtos
 {
     /// <summary>
-    /// Object used to insert new client.
+    /// Objeto utilizado para inserir novo cliente.
     /// </summary>
     public class ClientRequest
     {
