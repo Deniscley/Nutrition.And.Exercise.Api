@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Nutrition.And.Exercise.Core.DomainObjects;
 using Nutrition.And.Exercise.Domain.Entities;
 
 namespace Nutrition.And.Exercise.Data.ConfigurationMappings
@@ -24,6 +25,16 @@ namespace Nutrition.And.Exercise.Data.ConfigurationMappings
                 .HasMaxLength(11)
                 .IsRequired()
                 .HasColumnType("varchar(11)");
+
+            //builder.OwnsOne(c => c.Cpf, tf =>
+            //{
+            //    tf.Property(x => x.Number)
+            //        .IsRequired()
+            //        .HasMaxLength(Cpf.CpfMaxLength)
+            //        .HasColumnName("Cpf")
+            //        .HasColumnType($"varchar({Cpf.CpfMaxLength})");
+            //});
+
 
             builder.HasIndex(x => new { x.Nome });
 
