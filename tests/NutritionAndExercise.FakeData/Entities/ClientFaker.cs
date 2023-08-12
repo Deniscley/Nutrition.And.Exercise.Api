@@ -13,6 +13,7 @@ namespace Nutrition.And.Exercise.FakeData.Entities
             RuleFor(p => p.Nome, f => f.Person.FullName);
             RuleFor(p => p.DataNascimento, f => f.Date.Past());
             RuleFor(p => p.Cpf, f => f.Person.Cpf());
+            //RuleFor(p => p.Cpf.ToString(), f => f.Person.Cpf());
         }
     }
 }

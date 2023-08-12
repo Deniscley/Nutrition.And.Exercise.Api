@@ -3,31 +3,31 @@
 namespace Nutrition.And.Exercise.Domain.DTOs.ResponseDtos
 {
     /// <summary>
-    /// Object used to insert new client.
+    /// Objeto utilizado para retornar dados do cliente.
     /// </summary>
     public class ClientResponse : ICloneable
     {
         /// <summary>
-        /// Id of the client.
+        /// Id do cliente.
         /// </summary>
         /// <example>123</example>
         [Required]
         public Guid Id { get; private set; }
 
         /// <summary>
-        /// Client name.
+        /// Nome do cliente.
         /// </summary>
         /// <example>João</example>
         public string Nome { get; private set; }
 
         /// <summary>
-        /// date of birth
+        /// Data de nascimento.
         /// </summary>
         /// <example>1980-01-01</example>
         public DateTime DataNascimento { get; private set; }
 
         /// <summary>
-        /// Client cpf.
+        /// Cpf do cliente.
         /// </summary>
         /// <example>19873648725</example>
         public string Cpf { get; private set; }

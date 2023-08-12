@@ -4,7 +4,7 @@ using Nutrition.And.Exercise.Core.Messages;
 namespace Nutrition.And.Exercise.Application.Commands
 {
     /// <summary>
-    /// Object used to register clients.
+    /// Comando utilizado para cadastro de clientes.
     /// </summary>
     public class RegisterClientCommand : Command
     {

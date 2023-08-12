@@ -28,9 +28,9 @@ namespace Nutrition.And.Exercise.Api.Controllers
         }
 
         /// <summary>
-        /// Client list.
+        /// Lista de clientes.
         /// </summary>
-        /// <returns>Get client list.</returns>
+        /// <returns>Retornar lista de clientes.</returns>
         [HttpGet("obter-todos")]
         public async Task<IActionResult> Get()
         {   
@@ -49,10 +49,10 @@ namespace Nutrition.And.Exercise.Api.Controllers
         }
 
         /// <summary>
-        /// Client by id
+        /// Cliente por id.
         /// </summary>
-        /// <param name="id" example="123">Id of Client</param>
-        /// <returns>Get client by id</returns>
+        /// <param name="id" example="123">Id do Cliente</param>
+        /// <returns>Retornar cliente por id</returns>
         [HttpGet("obter-por-id/{id:guid}")]
         public async Task<IActionResult> Get(Guid id)
         {
@@ -60,16 +60,16 @@ namespace Nutrition.And.Exercise.Api.Controllers
         }
 
         /// <summary>
-        /// Register clients
+        /// Registrar clientes.
         /// </summary>
         /// <param name="request"></param>
-        /// <returns>Customer records command</returns>
+        /// <returns>Comando de confirmação de registro do cliente.</returns>
         [HttpPost("inserir-clientes")]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
         public async Task<IActionResult> Post()
         {
             var result = await _mediatorHandler
-                .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Sakura", DateTime.Now, "12456789452"));
+                .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Sasuke", DateTime.Now, "10519961048"));
 
             return CustomResponse(result);
         }
@@ -89,7 +89,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         }
 
         /// <summary>
-        /// Customer removal by id
+        /// Remoção de cliente por id.
         /// </summary>
         /// <param name="id" example="123">Id of Client</param>
         /// <remarks>When deleting the client, it will be permanently removed from the base.</remarks>
