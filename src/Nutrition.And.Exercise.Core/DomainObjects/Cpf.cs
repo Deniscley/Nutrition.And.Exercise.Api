@@ -11,7 +11,7 @@ namespace Nutrition.And.Exercise.Core.DomainObjects
     {
         public const int CpfMaxLength = 11;
 
-        public string Number { get; private set; }
+        public string Numero { get; private set; }
 
         // Construtor do EntityFramework
         private Cpf() { }
@@ -19,7 +19,7 @@ namespace Nutrition.And.Exercise.Core.DomainObjects
         public Cpf(string number)
         {
             if (!Validate(number)) throw new DomainException("CPF inválido");
-            Number = number;
+            Numero = number;
         }
 
         public static bool Validate(string cpf)

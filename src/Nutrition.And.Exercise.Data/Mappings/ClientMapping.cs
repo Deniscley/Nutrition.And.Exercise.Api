@@ -28,7 +28,7 @@ namespace Nutrition.And.Exercise.Data.ConfigurationMappings
 
             //builder.OwnsOne(c => c.Cpf, tf =>
             //{
-            //    tf.Property(x => x.Number)
+            //    tf.Property(x => x.Numero)
             //        .IsRequired()
             //        .HasMaxLength(Cpf.CpfMaxLength)
             //        .HasColumnName("Cpf")

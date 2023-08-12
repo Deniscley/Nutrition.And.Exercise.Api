@@ -12,7 +12,7 @@ namespace Nutrition.And.Exercise.Core.DomainObjects
         public const int AddressMaxLength = 254;
         public const int AddressMinLength = 5;
 
-        public string Address { get; private set; }
+        public string Endereco { get; private set; }
 
         //Construtor do EntityFramework
         protected Email() { }
@@ -20,7 +20,7 @@ namespace Nutrition.And.Exercise.Core.DomainObjects
         public Email(string address)
         {
             if (!Validate(address)) throw new DomainException("E-mail inválido");
-            Address = address;
+            Endereco = address;
         }
 
         public static bool Validate(string email)
