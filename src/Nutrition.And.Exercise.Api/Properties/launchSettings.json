@@ -21,6 +21,13 @@
         "ASPNETCORE_ENVIRONMENT": "Production"
       }
     },
+    "MongoDbAPI": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,

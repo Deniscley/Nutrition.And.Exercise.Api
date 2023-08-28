@@ -13,6 +13,10 @@ using Nutrition.And.Exercise.Core.Messages.CommonMessages.Notifications;
 using Nutrition.And.Exercise.Application.EventsHandlers;
 using Nutrition.And.Exercise.Domain.Interfaces.Queries;
 using Nutrition.And.Exercise.Application.Queries;
+using Nutrition.And.Exercise.Domain.Interfaces.Repositories.MongoDBRepositories;
+using Nutrition.And.Exercise.Data.Repositories.MongoDBRepositories;
+using Nutrition.And.Exercise.Domain.Interfaces.MongoDBServices;
+using Nutrition.And.Exercise.Application.MongoDBServices;
 
 namespace Nutrition.And.Exercise.Api.Configuration
 {
@@ -27,6 +31,7 @@ namespace Nutrition.And.Exercise.Api.Configuration
             // Repository
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<IClientQueriesRepository, ClientQueriesRepository>();
+            services.AddScoped<IProductMongoRepository, ProductMongoRepository>();
 
             // MediatorHandler
             services.AddScoped<IMediatorHandler, MediatorHandler>();
@@ -36,6 +41,11 @@ namespace Nutrition.And.Exercise.Api.Configuration
 
             // Queries
             services.AddScoped<IClientQueries, ClientQueries>();
+
+            //MongoDBServices
+            services.AddScoped<IProductAppServices, ProductAppServices>();
+
+            //
 
             // Event
             services.AddScoped<INotificationHandler<RegisteredCustomerEvent>, ClientEventHandler>();
