@@ -69,7 +69,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         public async Task<IActionResult> Post()
         {
             var result = await _mediatorHandler
-                .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Sasuke", DateTime.Now, "10519961048"));
+                .SendCommand(new RegisterClientCommand(Guid.NewGuid(), "Goku", DateTime.Now, "90319961048"));
 
             return CustomResponse(result);
         }
