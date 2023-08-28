@@ -21,7 +21,7 @@ namespace Nutrition.And.Exercise.Data.Repositories.DapperRepositories
         {
             try
             {
-                string sql = @"INSERT INTO [dbo].[Clients] (Id, Nome, DataNascimento) 
+                string sql = @"INSERT INTO [dbo].[Clientes] (Id, Nome, DataNascimento) 
                                     VALUES (@id, @nome, @DataNascimento)";
 
                 DynamicParameters parameters = new();
@@ -46,8 +46,9 @@ namespace Nutrition.And.Exercise.Data.Repositories.DapperRepositories
                 string sql = @"SELECT
                                 Id,
                                 Nome,
-                                DataNascimento
-                             FROM [dbo].[Clients] C
+                                DataNascimento,
+                                Cpf
+                             FROM [dbo].[Clientes] C
                              WHERE C.Id = @id";
 
                 DynamicParameters parameters = new();
