@@ -1,16 +1,12 @@
-
 # Denis Laureano - Nutrição & Exercício
 
 Projeto voltado para divulgação e venda de serviço no setor de nutrição e atividade física.
 
-
-![Logo](https://scontent.fdiq5-1.fna.fbcdn.net/v/t39.30808-6/285450801_5146798808771110_3230946504021191872_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeH1aDZIcqMNrWzDvL8VW_QqlehRXdpHUCSV6FFd2kdQJDIkEWP9k1dXH8hqkrl3Ajs0qA6khkzdn8fV83_35Tiy&_nc_ohc=1k38FL-Oms4AX80iMDB&_nc_ht=scontent.fdiq5-1.fna&oh=00_AfB6pXz1FqjDGAgT38zUDcGjkjqe2_BBHYvuyHivC9rqog&oe=64D41010)
-
+<img alt="coding-time" src="logo.jpg"/>
 
 ## Autores
 
 - [@DeniscleyMarfran](https://github.com/Deniscley)
-
 
 ## Usado por
 
@@ -18,13 +14,11 @@ Esse projeto é usado pelas seguintes empresas:
 
 - [Denis Laureano - Nutrição & Exercício](https://www.instagram.com/nutri_denislaureano/)
 
-
 ## Funcionalidades
 
 - Preview em tempo real
 - Modo tela cheia
 - Multiplataforma
-
 
 ## Stack utilizada
 
@@ -32,13 +26,11 @@ Esse projeto é usado pelas seguintes empresas:
 
 **Back-end:** C# Net, SQLServer
 
-
 ## Variáveis de Ambiente
 
 Para rodar esse projeto, você vai precisar adicionar a seguinte variável de ambiente no seu appsettings referente ao ambiente que está sendo utilizado.
 
 `ConnectionStrings`
-
 
 ## Rodando localmente
 
@@ -75,13 +67,13 @@ Este projeto usa next/font para otimizar e carregar automaticamente Inter, uma f
 ```
 
 Inicie a API (Após configurado as Variáveis de Ambiente como citado acima)
+
 ```bash
     A maneira de executar um programa depende de onde você começa, do tipo de programa e de você desejar executar no depurador. No caso mais simples, para compilar e executar um projeto aberto no Visual Studio:
 
 Pressione F5, escolha Depurar>Iniciar com depuração no menu do Visual Studio ou selecione a seta verde Iniciar e o nome do projeto na barra de ferramentas do Visual Studio.
 Ou, para executar sem depurar, pressione Ctrl+F5 ou escolha Depurar>Iniciar sem depuração no menu do Visual Studio.
 ```
-
 
 ## Rodando os testes
 
@@ -91,11 +83,9 @@ Para rodar os testes, rode o seguinte comando
   npm run test
 ```
 
-
 ## Suporte
 
 Para suporte, mande um email para deniscleymaf@outlook.com.
-
 
 ## Etiquetas
 
@@ -103,29 +93,22 @@ Para suporte, mande um email para deniscleymaf@outlook.com.
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
-
 ## Licença
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-
 ## 🔗 Links
+
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)]()
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/deniscleymarfran/)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/DeniscleyMAF)
 
-
-
 ## Feedback
 
 Se você tiver algum feedback, por favor nos deixe saber por meio de deniscleymaf@outlook.com
-
 
 ## FAQ
 
 #### Esse projeto é OpenSource ?
 
 Projeto de uso proprietário
-
-
-
