@@ -2,7 +2,6 @@
 using Nutrition.And.Exercise.Application.Commands;
 using Nutrition.And.Exercise.Core.Communication.Mediator;
 using Nutrition.And.Exercise.Domain.Interfaces.Queries;
-using Microsoft.AspNetCore.Authorization;
 //using SerilogTimings;
 
 namespace Nutrition.And.Exercise.Api.Controllers
