@@ -14,4 +14,3 @@ namespace Nutrition.And.Exercise.Data.Context
     }
 }
 
-//https://www.youtube.com/watch?v=fCWvPy-TmR8
