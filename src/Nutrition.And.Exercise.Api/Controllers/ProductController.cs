@@ -5,7 +5,7 @@ using Nutrition.And.Exercise.Domain.Interfaces.MongoDBServices;
 namespace Nutrition.And.Exercise.Api.Controllers
 {
     //[Authorize]
-    [Route("api/[controller]")]
+    [Route("api/product")]
     [ApiController]
     public class ProductController : Controller
     {

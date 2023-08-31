@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Azure;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using Nutrition.And.Exercise.Data.Context;
