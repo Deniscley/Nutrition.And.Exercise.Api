@@ -1,5 +1,4 @@
-﻿using Nutrition.And.Exercise.Core.Messages;
-using Nutrition.And.Exercise.Core.Messages.CommonMessages.DomainEvents;
+﻿using Nutrition.And.Exercise.Core.Messages.CommonMessages.DomainEvents;
 
 namespace Nutrition.And.Exercise.Application.Events
 {

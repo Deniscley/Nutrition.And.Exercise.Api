@@ -9,9 +9,7 @@ using Nutrition.And.Exercise.FakeData.DTOs;
 using Xunit;
 using Nutrition.And.Exercise.Core.Communication.Mediator;
 using Nutrition.And.Exercise.Domain.Interfaces.Queries;
-using Nutrition.And.Exercise.Application.Queries;
 using Nutrition.And.Exercise.Api.Controllers;
-using Nutrition.And.Exercise.Application.Commands;
 
 namespace Nutrition.And.Exercise.Tests.Controllers
 {
