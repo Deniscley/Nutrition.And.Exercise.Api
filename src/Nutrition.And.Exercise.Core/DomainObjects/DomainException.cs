@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Nutrition.And.Exercise.Core.DomainObjects
+﻿namespace Nutrition.And.Exercise.Core.DomainObjects
 {
     public class DomainException : Exception
     {

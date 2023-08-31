@@ -77,12 +77,7 @@ namespace Nutrition.And.Exercise.Api.Controllers
         /// <summary>
         /// Atualizar cliente por id.
         /// </summary>
-        /// <param name="value"></param>
-        //[HttpPost("")]
-        //public void Post([FromBody] string value)
-        //{
-        //}
-
+        /// <param name="id" example="123"></param>
         [HttpPut("atualizar-clientes/{id:guid}")]
         public void Put(int id, [FromBody] string value)
         {

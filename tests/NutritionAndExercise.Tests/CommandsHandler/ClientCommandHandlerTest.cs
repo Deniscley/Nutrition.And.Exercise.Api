@@ -1,12 +1,9 @@
 ﻿using Moq;
-using Moq.AutoMock;
 using NSubstitute;
 using Nutrition.And.Exercise.Application.Commands;
 using Nutrition.And.Exercise.Application.CommandsHandler;
-using Nutrition.And.Exercise.Domain.Entities;
 using Nutrition.And.Exercise.Domain.Interfaces.Repositories.EFRepositories;
 using Nutrition.And.Exercise.FakeData.Commands;
-using Xunit;
 
 namespace Nutrition.And.Exercise.Tests.CommandsHandler
 {

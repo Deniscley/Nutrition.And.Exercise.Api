@@ -1,6 +1,5 @@
 ﻿using Nutrition.And.Exercise.Core.Data;
 using Nutrition.And.Exercise.Core.DomainObjects;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Nutrition.And.Exercise.Domain.Entities
