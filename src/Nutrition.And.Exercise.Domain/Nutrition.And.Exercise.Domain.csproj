@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>C:\NutritionAndExercise\Nutrition.And.Exercise.Api\Nutrition.And.Exercise.API\src\Nutrition.And.Exercise.Api\obj\Nutrition.And.Exercise.Domain.xml</DocumentationFile>
+    <DocumentationFile>C:\Nutrition.And.Exercise.Api\src\Nutrition.And.Exercise.Api\obj\Nutrition.And.Exercise.Domain.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
