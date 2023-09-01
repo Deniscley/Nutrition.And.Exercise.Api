@@ -8,7 +8,7 @@ namespace Nutrition.And.Exercise.Data.Repositories.MongoDBRepositories
 {
     public class ProductMongoRepository : IProductMongoRepository
     {
-        internal MongoDBContext _context = new MongoDBContext();
+        private MongoDBContext _context = new MongoDBContext();
         private IMongoCollection<Product> _collection;
         public ProductMongoRepository()
         {
