@@ -9,7 +9,7 @@ namespace Nutrition.And.Exercise.Data.Context
         public MongoDBContext() 
         {
             _client = new MongoClient("");
-            _database = _client.GetDatabase("Inventory");
+            _database = _client.GetDatabase("");
         }
     }
 }
